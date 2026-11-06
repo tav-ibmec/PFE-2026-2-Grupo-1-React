@@ -1,0 +1,51 @@
+@startuml AHT03-PKZ-landing-page
+skinparam DefaultTextAlignment center
+title AHT 03: Landing Page da PKZ Lab
+
+note right
+ A Landing Page da PKZ Lab é voltada a jovens atletas e seus responsáveis,
+ com foco na formação e no desenvolvimento desde cedo.
+
+ Atualizações:
+ A página de cadastro da AHT 05 foi retirada, pois não será implementada.
+ A agenda da aula experimental fica na seção Contato e corresponde à AHT 07.
+ A volta à Página Inicial é feita pelo link "Hub" do menu ou pelos logos do topo
+ e do rodapé, mas é representada uma única vez para evitar redundância.
+end note
+
+start
+
+#1E90FF:Usuário chega à Landing Page da PKZ Lab;
+#1E90FF:Sistema exibe Hero Section da PKZ Lab, com os botões "Agende uma aula" e "Saiba Mais", e o menu com o link "Hub";
+
+if (Usuário clicou em "Hub" no menu?) then (sim)
+  #FFF07F:Usuário retorna à Página Inicial e ao Hub de Marcas;
+  note right: AHT 01
+  stop
+else (não)
+  #FFF07F:Usuário continua na Landing Page da PKZ Lab;
+endif
+
+#1E90FF:Sistema exibe informações sobre a PKZ Lab e seus diferenciais;
+#1E90FF:Sistema exibe catálogo de pacotes (somente com benefícios, sem valores), cada um com o botão "Matricule-se!";
+#1E90FF:Sistema exibe avaliações de responsáveis e atletas;
+#1E90FF:Sistema exibe a seção Contato, com endereço, WhatsApp, e-mail e a agenda da aula experimental;
+#1E90FF:Sistema exibe FAQ com as 5 principais dúvidas;
+#1E90FF:Sistema exibe CTA com os botões "Agende uma aula" e "Matricule-se";
+
+if (Usuário deseja agendar uma aula experimental?) then (sim)
+  #FFF07F:Usuário clica em "Agende uma aula" (no hero ou no CTA) ou no "Matricule-se!" de um pacote;
+  #1E90FF:Sistema leva o usuário até a agenda, na seção Contato;
+  note right: AHT 07
+else (não)
+  #FFF07F:Usuário continua explorando a Landing Page;
+endif
+
+legend right
+  |= Cor |= Significado |
+  |<#1E90FF>| Ação ou tela exibida pelo sistema |
+  |<#FFF07F>| Resultado de uma decisão do usuário |
+endlegend
+
+stop
+@enduml

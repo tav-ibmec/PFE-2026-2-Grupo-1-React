@@ -1,0 +1,73 @@
+@startuml AHT06-OnetoOne-agendamento
+
+skinparam DefaultTextAlignment center
+
+
+title AHT 06: Agendamento de Aula Experimental do Studio One to One
+
+note right
+  Somente o agendamento de aula experimental.
+  Não há cadastro de usuário, login, sign up.
+  A agenda fica na seção Contato da Landing Page do Studio One to One (AHT 02).
+  O modal abre somente depois que o usuário escolhe um horário livre.
+  A reserva fica salva no próprio navegador (não há back-end).
+
+  O botão "Cancelar" existe durante todo o preenchimento do modal,
+  mas é representado uma única vez para evitar redundância.
+  Os botões "Limpar reservas (só para testes)" e "Ver dados salvos"
+  são ferramentas de teste e não fazem parte do percurso do usuário.
+end note
+
+start
+
+#1E90FF:Usuário chega à agenda pelo "Matricule-se!" de um plano, pelo "Agende uma aula" do CTA ou rolando a página;
+#1E90FF:Sistema exibe a tabela da semana com os horários livres ("Livre"), os indisponíveis ("—") e os botões "Anterior" e "Próxima";
+
+if (Usuário deseja reservar um horário?) then (Não)
+  #FFF07F:Usuário continua navegando pela Landing Page do Studio One to One;
+  note right: AHT 02
+  stop
+else (Sim)
+  #FFF07F:Usuário procura um horário livre na tabela;
+endif
+
+while (Há um horário livre que serve ao usuário nesta semana?) is (Não)
+  #FFF07F:Usuário troca de semana em "Anterior" ou "Próxima" (até 4 semanas);
+  #1E90FF:Sistema exibe os horários da semana escolhida;
+endwhile (Sim)
+
+#FFF07F:Usuário clica em um horário "Livre";
+#1E90FF:Sistema abre o modal com o dia e o horário escolhidos;
+#1E90FF:Sistema exibe o formulário com Nome, E-mail e Telefone e os botões "Cancelar" e "Reservar";
+
+if (Usuário clicou em "Cancelar"?) then (Sim)
+  #FFF07F:Modal fecha e o usuário volta à agenda sem reservar;
+  stop
+else (Não)
+endif
+
+repeat
+  #FFF07F:Usuário preenche os dados solicitados e clica em "Reservar";
+
+  if (Os dados solicitados estão válidos?) then (Sim)
+    #1E90FF:Sistema salva a reserva no navegador e fecha o modal;
+    #1E90FF:Sistema exibe "Reserva confirmada para (data e horário)!" e marca o horário como indisponível ("—");
+    break
+  else (Não)
+    #1E90FF:Sistema destaca o campo vazio ou inválido e não envia o formulário;
+    #FFF07F:Usuário decide se deseja corrigir os dados;
+  endif
+
+repeat while (Usuário deseja corrigir os dados?) is (Sim)
+
+#FFF07F:Usuário continua na Landing Page do Studio One to One, com o modal fechado;
+
+stop
+
+legend right
+  |= Cor |= Significado |
+  |<#1E90FF>| Ação ou tela exibida pelo sistema |
+  |<#FFF07F>| Resultado de uma decisão do usuário |
+endlegend
+
+@enduml
