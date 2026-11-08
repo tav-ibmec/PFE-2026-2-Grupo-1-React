@@ -1,0 +1,143 @@
+/* RESET E FONTE LOCAL */
+
+/* Reset: zera as margens e espaçamentos que o navegador coloca de fábrica e
+   faz o padding e a borda entrarem dentro da largura (border-box) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* O ::before e o ::after também usam border-box (setas e linhas decorativas) */
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* O <dialog> precisa do margin: auto do navegador para ficar no centro da tela,
+   então ele volta depois do reset */
+dialog {
+  margin: auto;
+}
+
+/* A Cocogoose não está no Google Fonts, então é carregada do próprio projeto.
+   O font-display: swap mostra o texto com a fonte reserva enquanto o arquivo carrega. */
+@font-face {
+  font-family: CocogooseProTrial;
+  src: url("/imagens/imagens-padronizacao/assets/Cocogoose-Pro-Bold-trial%20(1).ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* BASE E ACESSIBILIDADE */
+
+html {
+  scroll-behavior: smooth; /* rolagem suave ao clicar nos links do menu */
+  -webkit-text-size-adjust: 100%; /* evita o celular aumentar o texto sozinho (como no Normalize.css) */
+  text-size-adjust: 100%;
+}
+
+body {
+  line-height: 1.55;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Imagens nunca passam da largura do elemento pai e não distorcem */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Botões e campos usam a mesma fonte da página */
+button,
+input {
+  font: inherit;
+}
+
+/* O navegador deixa o <address> em itálico; aqui ele volta ao normal */
+address {
+  font-style: normal;
+}
+
+/* Listas usadas nos menus: sem marcador */
+nav ul {
+  list-style: none;
+}
+
+/* Contorno de foco visível para quem navega pelo teclado */
+:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* Link "Pular para o conteúdo": fica fora da tela e desce quando recebe foco */
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 12px;
+  left: 12px;
+  padding: 10px 16px;
+  transform: translateY(-160%);
+  border-radius: 5px;
+  background: #fff;
+  color: #111;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Esconde o texto da tela, mas o leitor de tela continua lendo.
+   Preto no branco para o WAVE não acusar contraste baixo no texto escondido. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+  color: #000;
+  background: #fff;
+}
+
+/* VARIÁVEIS E TEMAS */
+
+/* Cores das duas marcas e medidas do layout, declaradas uma vez só */
+:root {
+  --cor-amarelo-pkz: #f1f000;
+  --cor-azul-pkz: #000080;
+  --cor-azul-claro-pkz: #3eb5e9;
+  --cor-preto-pkz: #141414;
+  --cor-azul-oto: #0898dd;
+  --cor-azul-escuro-oto: #033651;
+  --cor-azul-noite-oto: #001a27;
+  --cor-azul-gelo-oto: #b3ecff;
+  --cor-hub-escuro: #101820;
+  --cor-hub-azul: #315bc0;
+
+  --gutter: 20px; /* margem lateral do conteúdo */
+  --wrap-max: 1560px; /* largura máxima do conteúdo */
+}
+
+/* RESPONSIVIDADE - VARIÁVEIS GLOBAIS */
+
+@media (min-width: 768px) {
+  :root {
+    --gutter: 40px;
+  }
+}
+
+@media (min-width: 1201px) {
+  :root {
+    --gutter: 6vw;
+  }
+}
