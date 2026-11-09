@@ -1,12 +1,14 @@
 # Sprint Backlog
-Tarefas selecionadas para a Sprint 1 — Início do projeto React e definição das atribuições:
 
-- Enviar os documentos do repositório anterior para o repositório React.
-- Dividir as atribuições entre os integrantes.
-- Registrar o prazo de entrega de 13/11/2026.
-- Registrar as alterações solicitadas e a nova página de Fisioterapia.
-- Registrar que o agendamento está em aberto até a confirmação do professor.
-- Iniciar a estrutura do projeto em React.
-- Atualizar o Product Backlog e o registro de impedimentos e riscos.
+Tarefas selecionadas para a Sprint 5 — Versão completa, testes, publicação e entrega:
 
+- Postar a etapa 06 — HUB V2 e página de Fisioterapia (Lucas).
+- Revisar cada página na versão completa (Rebeca; Yasmin e João; Manuela e Pedro).
+- Testar links, rotas e responsividade, comparando com a versão Vanilla e com o protótipo.
+- Conferir as alterações solicitadas e o agendamento nas landing pages.
+- Corrigir as diferenças encontradas nos testes.
+- Revisar a acessibilidade básica.
+- Publicar o site na Vercel e testar o link.
+- Conferir os requisitos do enunciado com a entrega.
+- Atualizar o Product Backlog, o registro de impedimentos e riscos e a documentação Scrum para a versão 3.2.
 
