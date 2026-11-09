@@ -6,14 +6,14 @@ Reconstruir em React a solução institucional desenvolvida na versão Vanilla, 
 ## 2. Divisão das atividades da equipe
 | Integrante | Atividade realizada |
 |---|---|
-| Rebeca | 1 — HUB: página inicial, estilos e funcionalidades do HUB (`HUB.jsx` e `hub.css`), incluindo a troca de "HUB" por "Início". |
-| Yasmin | 2 — Arquitetura e integração: estrutura compartilhada das landing pages, rotas e organização dos dados (`LandingPage.jsx`, `PKZLab.jsx`, `OneToOne.jsx`, `App.jsx` e `src/data/`). |
-| João | 3 — Estrutura visual: Header fixo, Hero, Sobre Nós e Diferenciais (`Header.jsx`, `Hero.jsx`, `AboutSection.jsx` e `DifferenceSection.jsx`). |
-| Manuela | 4 — Planos e Avaliações: componentes dos pacotes, planos e depoimentos (`PlanCard.jsx`, `PlansSection.jsx`, `ReviewCard.jsx` e `ReviewsSection.jsx`). |
-| Pedro | 5 — FAQ, Chamada Final e Footer: perguntas frequentes, CTAs finais e rodapés das empresas (`FAQ.jsx`, `ClosingCTA.jsx` e `Footer.jsx`). |
-| Lucas | 6 — Contato e Agendamento: painel de contato, agenda, reservas e modal de confirmação (`ContactSection.jsx`, `Agendamento.jsx` e `Agendamento.css`); nova página de Fisioterapia e atualização do HUB. |
+| Rebeca | 01 — HUB V1: implementação inicial do portal, com apresentação das empresas, navegação, contato e rodapé. |
+| Yasmin | 02 — One to One, Parte 1: inclusão da rota e das seções Hero, Sobre Nós, Diferenciais e Planos. |
+| João | 03 — One to One, Parte 2: conclusão da página com Avaliações, Contato, Agendamento, FAQ, CTA e Footer. |
+| Manuela | 04 — PKZ Lab, Parte 1: inclusão da rota e das seções Hero, Sobre Nós, Diferenciais e Pacotes, reutilizando os componentes compartilhados. |
+| Pedro | 05 — PKZ Lab, Parte 2: conclusão da página com Avaliações, Contato, agendamento integrado, FAQ, CTA e Footer. |
+| Lucas | 06 — Versão completa: reformulação do HUB para a V2 e inclusão da página de Fisioterapia, mantendo as demais páginas completas. |
 
-As frentes de trabalho definidas em 06/11/2026 foram organizadas em seis funções, com os arquivos de cada uma, e o responsável por cada função foi definido em 07/11/2026. Os envios foram organizados para que dois integrantes não alterem o mesmo arquivo ao mesmo tempo. Cada integrante revisa a parte que desenvolveu.
+As frentes de trabalho definidas em 06/11/2026 foram organizadas em seis funções em 07/11/2026, divididas por componentes. Como a equipe teve dificuldade de sincronizar o desenvolvimento, a organização foi alterada em 08/11/2026 para seis etapas progressivas. Cada etapa acumula o conteúdo das anteriores, e a postagem no GitHub segue a ordem 01 → 06: antes de publicar, cada integrante confirma que a etapa anterior foi enviada e atualiza o repositório local. Cada integrante revisa a parte que desenvolveu.
 
 ## 3. Sprints e entregas
 
@@ -25,22 +25,25 @@ As frentes de trabalho definidas em 06/11/2026 foram organizadas em seis funçõ
 **Objetivo:** definir o responsável por cada função, organizar a ordem dos envios, criar a estrutura do projeto e desenvolver os componentes principais.  
 **Entregas relacionadas:** responsáveis definidos e ordem dos envios organizada; `hub.css` e troca de "HUB" por "Início" (Rebeca); estrutura, rotas e padrão de nomes e props (Yasmin); Header fixo, menu do celular e Hero (João); cards de planos e avaliações (Manuela); Footer (Pedro); seção de contato (Lucas) (07/11).
 
-### Sprint 3 — Seções, Fisioterapia e fidelidade ao protótipo
-**Objetivo:** concluir as seções das landing pages, iniciar a página de Fisioterapia e aproximar a interface do protótipo.  
-**Entregas relacionadas:** arquivos de dados (Yasmin), Sobre Nós, Diferenciais e Header sem "Matricule-se" (João), planos e avaliações sem "Matricule-se" (Manuela), FAQ e Chamada Final (Pedro), início da página de Fisioterapia (Lucas), estilos migrados e ajustes de imagens e fontes (08/11).
+### Sprint 3 — Reorganização em etapas e HUB V1
+**Objetivo:** reorganizar as responsabilidades em seis etapas progressivas, definir a ordem de postagem no GitHub e publicar a primeira etapa.  
+**Entregas relacionadas:** seis etapas definidas, cada uma com um responsável, ordem de postagem 01 → 06 e etapa 01 — HUB V1 postada (Rebeca) (08/11).
 
-### Sprint 4 — Integração, testes, publicação e entrega
-**Objetivo:** integrar as páginas, testar, publicar na Vercel e preparar a entrega.  
-**Entregas relacionadas:** páginas integradas (Yasmin), página de Fisioterapia concluída e incluída no HUB (Lucas), testes, correções, publicação na Vercel e documentação final (09/11). O agendamento permanece em aberto até a decisão do professor.
+### Sprint 4 — Etapas 02 a 05 e preparação da entrega
+**Objetivo:** postar as etapas 02 a 05 na ordem definida e preparar a etapa 06 e a entrega.  
+**Entregas relacionadas:** etapa 02 — One to One, Parte 1 (Yasmin), etapa 03 — One to One, Parte 2 (João), etapa 04 — PKZ Lab, Parte 1 (Manuela), etapa 05 — PKZ Lab, Parte 2 (Pedro), etapa 06 organizada (Lucas) e documentação Scrum na versão 3.1 (09/11). A etapa 06, com o HUB V2 e a página de Fisioterapia, ficou para a Sprint 5.
+
+### Sprint 5 — Versão completa, testes, publicação e entrega
+**Objetivo:** postar a etapa 06, testar a versão completa, publicar na Vercel e preparar a entrega.  
+**Entregas relacionadas:** etapa 06 — HUB V2 e página de Fisioterapia (Lucas), revisão de cada página pelos responsáveis, testes, correções, acessibilidade, publicação na Vercel e documentação final (12/11).
 
 ## 4. Sprint Planning — Planejamento da Sprint
-**Objetivo proposto (Sprint 4):** concluir o projeto React, integrando e testando o Início, a PKZ Lab, a One to One e a Fisioterapia, corrigindo os problemas encontrados e publicando o site na Vercel antes do prazo de 13/11/2026.
+**Objetivo proposto (Sprint 5):** concluir o projeto React com a postagem da etapa 06, testar e corrigir a versão completa e publicar o site na Vercel antes do prazo de 13/11/2026.
 
-- Integrar as quatro páginas com os componentes desenvolvidos (Yasmin).
-- Concluir a página de Fisioterapia e incluí-la no HUB, depois do envio final da Rebeca (Lucas).
+- Postar a etapa 06 — HUB V2 e página de Fisioterapia (Lucas).
+- Revisar cada página na versão completa (Rebeca; Yasmin e João; Manuela e Pedro).
 - Testar links, rotas e responsividade, comparando com a versão Vanilla e com o protótipo.
-- Corrigir as diferenças encontradas nos testes.
-- Revisar a acessibilidade básica.
+- Conferir as alterações solicitadas e o agendamento nas landing pages.
+- Corrigir as diferenças encontradas nos testes e revisar a acessibilidade básica.
 - Publicar o site na Vercel e testar o link.
-- Manter o agendamento isolado, aguardando a decisão do professor (Lucas).
-- Atualizar o Product Backlog e o registro de impedimentos e riscos.
+- Conferir os requisitos do enunciado e atualizar a documentação Scrum para a versão 3.2.
