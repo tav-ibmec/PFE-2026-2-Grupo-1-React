@@ -28,7 +28,8 @@
 
 /* Fonte dos títulos */
 .oto h2,
-.oto h3 {
+.oto h3,
+.oto .agendamento h1 {
   font-family: CocogooseProTrial, "Outfit", Arial, sans-serif;
   font-weight: 700;
 }
@@ -217,6 +218,14 @@
   line-height: 1.55;
 }
 
+.oto .about-content h3.closing-line {
+  margin-top: 20px;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
 /* Números da empresa */
 .oto .stats {
   display: flex;
@@ -281,6 +290,10 @@
     font-size: 1.12rem;
   }
 
+  .oto .about-content h3.closing-line {
+    font-size: 1.15rem;
+  }
+
   .oto .stats {
     max-width: 590px;
     gap: 20px;
@@ -311,7 +324,8 @@
     max-width: 780px;
   }
 
-  .oto .about-content>p {
+  .oto .about-content>p,
+  .oto .about-content h3.closing-line {
     margin-top: 24px;
     font-size: 1.05rem;
     line-height: 1.5;
@@ -327,8 +341,8 @@
     width: 88%;
   }
   .oto .about-section .section-head,
-.oto .about-section .about-content,
-.oto .about-section .content-wrap {
+  .oto .about-section .about-content,
+  .oto .about-section .content-wrap {
     position: static;
   }
   .oto .section-head.has-deco {
@@ -356,6 +370,8 @@
   font-size: 7.4vw;
   line-height: 1.13;
 }
+
+/* Grade de serviços - mobile */
 .oto .service-grid {
   display: grid;
   justify-items: center;
@@ -621,8 +637,41 @@
 }
 
 /* Botão único abaixo dos planos */
+.oto .plans-bottom-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 64px;
+  padding: 22px 32px;
+
+  border-radius: 20px;
+  background: #b3ecff;
+  color: var(--cor-azul-escuro-oto);
+
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: transform 0.25s ease,
+    background-color 0.25s ease;
+}
+
+@media (hover: hover) {
+  .oto .plans-bottom-cta:hover {
+    transform: translateY(-3px);
+    background: #d5f5ff;
+  }
+}
 
 /* RESPONSIVIDADE - BOTÃO DOS PLANOS */
+@media (max-width: 600px) {
+  .oto .plans-bottom-cta {
+    margin-top: 40px;
+    padding: 16px 24px;
+    font-size: 1.1rem;
+  }
+}
 
 /* RESPONSIVIDADE - NOSSOS PLANOS */
 
@@ -644,7 +693,7 @@
   }
 
   .oto .plans-section .eyebrow::before,
-.oto .plans-section .eyebrow::after {
+  .oto .plans-section .eyebrow::after {
     width: 70px;
   }
 
@@ -707,3 +756,692 @@
   }
 }
 
+/* SETAS DE FUNDO - (AVALIACOES + CONTATO) */
+
+.oto .landing-reviews-decorated {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--page);
+}
+.oto .landing-reviews-decorated .reviews-section,
+.oto .landing-reviews-decorated .contact-section {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+.oto .reviews-bg-arrow {
+  position: absolute;
+  z-index: 0;
+  display: none;
+  height: auto;
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+}
+@media (min-width: 1201px) {
+  .oto .reviews-bg-arrow {
+    display: block;
+  }
+
+  /* SETAS_2.png: preenchidas no canto superior direito */
+  .oto .reviews-bg-arrow--right {
+    top: -190px;
+    right: -4%;
+    width: clamp(230px, 21vw, 400px);
+  }
+
+  /* SETAS_1.png: contornos no lado esquerdo, perto do Contato */
+  .oto .reviews-bg-arrow--left {
+    top: 860px;
+    left: -4%;
+    width: clamp(240px, 23vw, 400px);
+  }
+}
+
+/* SECTION - AVALIAÇÕES */
+
+.oto .reviews-section {
+  position: relative;
+  overflow: hidden;
+  padding: 72px 0 88px;
+  background: var(--page);
+}
+
+/* Título */
+.oto .reviews-section .section-head {
+  margin-bottom: 30px;
+}
+
+.oto .reviews-section h2 {
+  font-size: 7.4vw;
+  line-height: 1.13;
+}
+
+/* Introdução */
+.oto .reviews-section .section-intro {
+  max-width: 850px;
+  margin: 0 0 18px;
+  color: var(--soft);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Grade de avaliações */
+.oto .reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+/* Cartão */
+.oto .review-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 18px;
+  margin: 0;
+  padding: 28px 24px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #f5f8fa;
+}
+
+/* Estrelas */
+.oto .review-card .stars {
+  color: #f0b430;
+  font-size: 1.35rem;
+  letter-spacing: 3px;
+}
+
+/* Depoimento */
+.oto .review-card blockquote {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.oto .review-card blockquote p {
+  color: var(--soft);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* Identificação do aluno */
+.oto .review-card figcaption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.oto .review-initial {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: none;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--cor-azul-escuro-oto);
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* Decoração lateral */
+.oto .reviews-section>.side-decoration {
+  display: none;
+}
+
+/* RESPONSIVIDADE - AVALIAÇÕES */
+
+@media (min-width: 601px) {
+  .oto .reviews-section h2 {
+    font-size: 2.6rem;
+  }
+
+  .oto .reviews-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .oto .reviews-section {
+    padding: 96px 0 112px;
+  }
+
+  .oto .reviews-section .section-intro {
+    font-size: 1.12rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .oto .reviews-section {
+    padding: 130px 0 110px;
+  }
+
+  .oto .reviews-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+  }
+
+  .oto .review-card {
+    padding: 32px 28px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .oto .reviews-section>.side-decoration {
+    position: absolute;
+    top: 50%;
+    left: -100px;
+    display: block;
+    width: 150px;
+    transform: translateY(-50%);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+/* SECTION - CONTATO E AGENDAMENTO */
+
+.oto .contact-section {
+  position: relative;
+  overflow: hidden;
+  padding: 64px 0;
+  background: var(--page);
+}
+
+/* Painel azul principal */
+.oto .contact-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: 30px;
+  padding: 30px 14px 16px;
+  border-radius: 22px;
+  background: var(--cor-azul-escuro-oto);
+  color: #fff;
+}
+
+/* Coluna de contato */
+.oto .contact-copy {
+  min-width: 0;
+  padding: 0 4px;
+}
+
+.oto .contact-copy .eyebrow {
+  color: #fff;
+}
+
+.oto .contact-copy h2 {
+  margin-bottom: 20px;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.oto .contact-copy h2 span {
+  color: var(--cor-azul-gelo-oto);
+}
+
+.oto .contact-copy h2 .nowrap {
+  color: inherit;
+  white-space: nowrap;
+}
+
+.oto .contact-copy h2~p {
+  margin: 12px 0;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Lista de contatos */
+.oto .contact-details {
+  display: grid;
+  gap: 18px;
+  font-size: 0.95rem;
+  list-style: none;
+}
+
+.oto .contact-details li {
+  display: grid;
+  align-items: center;
+  column-gap: 14px;
+}
+
+.oto .contact-icon-slot {
+  display: block;
+  object-fit: contain;
+}
+
+.oto .contact-content {
+  display: block;
+  min-width: 0;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.oto .contact-label {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--cor-azul-gelo-oto);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.oto .contact-details a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.45);
+  text-underline-offset: 4px;
+}
+
+.oto .contact-details a:hover {
+  text-decoration-color: currentColor;
+}
+
+
+/* Decoração lateral */
+.oto .contact-section>.side-decoration {
+  display: none;
+}
+
+/* RESPONSIVIDADE - CONTATO */
+
+@media (min-width: 768px) {
+  .oto .contact-section {
+    padding: 88px 0;
+  }
+
+  .oto .contact-panel {
+    gap: 36px;
+    padding: 48px 44px 44px;
+    border-radius: 30px;
+  }
+
+  .oto .contact-details {
+    font-size: 1.02rem;
+  }
+
+  .oto .contact-details li {
+    column-gap: 16px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .oto .contact-section {
+    padding: 40px 0 64px;
+  }
+
+  .oto .contact-panel {
+    grid-template-columns: 1.064fr 1fr;
+    gap: 3.6vw;
+    padding: 50px 4.8vw 55px 5.4vw;
+  }
+
+  .oto .contact-copy {
+    padding: 0;
+  }
+
+  .oto .contact-copy .eyebrow {
+    margin-bottom: 36px;
+  }
+
+  .oto .contact-copy h2 {
+    margin-bottom: 36px;
+  }
+
+  .oto .contact-copy h2~p {
+    max-width: 470px;
+    margin: 14px 0;
+  }
+}
+
+@media (min-width: 1201px) {
+  .oto .contact-panel {
+    width: 82%;
+    max-width: 1450px;
+    margin-inline: auto;
+    gap: 50px;
+    padding: 50px 70px 55px 78px;
+  }
+}
+
+/* SECTION - FAQ */
+
+.oto .faq-section {
+  padding: 64px 0;
+  background: var(--page);
+}
+
+.oto .faq-section h2 {
+  margin-bottom: 32px;
+  font-size: 7.4vw;
+  line-height: 1.13;
+}
+
+/* Lista de perguntas */
+.oto .faq-list {
+  border-top: 1px solid var(--line);
+}
+
+.oto .faq-list details {
+  border-bottom: 1px solid var(--line);
+}
+
+.oto .faq-list summary {
+  display: flex;
+  min-height: 68px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 4px 16px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  list-style: none;
+}
+
+.oto .faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Seta das perguntas */
+.oto .faq-list summary::after {
+  display: block;
+  width: 11px;
+  height: 11px;
+  flex: none;
+  margin-right: 4px;
+  transform: rotate(45deg) translateY(-3px);
+  border-right: 2px solid var(--eyebrow);
+  border-bottom: 2px solid var(--eyebrow);
+  content: "";
+}
+
+/* Seta quando a pergunta está aberta */
+.oto .faq-list details[open] summary::after {
+  transform: rotate(225deg) translateY(-1px);
+}
+
+/* Respostas */
+.oto .faq-list details>p {
+  max-width: 1000px;
+  padding: 0 20px 22px 0;
+  color: var(--soft);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* RESPONSIVIDADE - FAQ */
+
+@media (min-width: 601px) {
+  .oto .faq-section h2 {
+    font-size: 2.6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .oto .faq-section {
+    padding: 96px 0;
+  }
+
+  .oto .faq-section h2 {
+    margin-bottom: 42px;
+  }
+
+  .oto .faq-list summary {
+    min-height: 96px;
+    font-size: 1.12rem;
+  }
+
+  .oto .faq-list details>p {
+    font-size: 1rem;
+  }
+
+  .oto .faq-section .eyebrow::before {
+    width: 70px;
+    margin-right: 14px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .oto .faq-section {
+    padding: 90px 0 110px;
+  }
+
+  .oto .faq-list summary {
+    min-height: 130px;
+    font-size: 1.2rem;
+  }
+
+  .oto .faq-question-text {
+    max-width: 600px;
+  }
+}
+
+/* SECTION - ÚLTIMA CHAMADA */
+
+.oto .closing-cta {
+  position: relative;
+  overflow: hidden;
+  padding: 72px 0;
+  background-color: var(--cor-azul-oto);
+  color: var(--cor-azul-noite-oto);
+  text-align: center;
+  --pattern-opacity: 0.1;
+}
+
+/* Aproveita a estampa já criada para os planos */
+.oto .closing-cta>.content-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.oto .closing-cta h2 {
+  color: #fff;
+  font-size: 7.6vw;
+  line-height: 1.13;
+}
+
+.oto .closing-cta p {
+  margin: 40px 0 55px;
+  color: inherit;
+  font-size: 1.25rem;
+}
+
+/* Botões empilhados no celular */
+.oto .closing-cta .hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 420px;
+  margin-inline: auto;
+}
+
+/* Botão da Última Chamada */
+.oto .closing-cta .plans-bottom-cta {
+  margin-top: 0;
+  padding: 22px 32px;
+  border-radius: 20px;
+  background: var(--cor-azul-escuro-oto);
+  color: var(--cor-azul-gelo-oto);
+  font-size: 1.5rem;
+}
+
+/* RESPONSIVIDADE - ÚLTIMA CHAMADA */
+
+@media (min-width: 768px) {
+  .oto .closing-cta {
+    padding: 120px 0;
+  }
+
+  .oto .closing-cta h2 {
+    font-size: 3.8rem;
+  }
+
+  .oto .closing-cta p {
+    font-size: 1.25rem;
+  }
+
+  .oto .closing-cta .hero-actions {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: none;
+  }
+}
+
+@media (min-width: 1201px) {
+  .oto .closing-cta {
+    width: 100%;
+    margin-inline: auto;
+    padding: 100px 0;
+  }
+}
+
+/* FOOTER */
+
+.oto .landing-footer {
+  padding: 56px 0 40px;
+  background: #fff;
+  color: var(--cor-azul-escuro-oto);
+}
+
+/* Grade do rodapé */
+.oto .footer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px 16px;
+}
+
+/* Identidade */
+.oto .footer-brand-block {
+  display: flex;
+  grid-column: 1 / -1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.oto .footer-logo {
+  display: block;
+  width: 190px;
+  height: 60px;
+}
+
+.oto .footer-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.oto .footer-brand-block p {
+  color: #53616a;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.oto .footer-brand-block small {
+  margin-top: 6px;
+  color: #5e6e76;
+  font-size: 0.78rem;
+}
+
+/* Grupos de links */
+.oto .footer-grid nav {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 14px;
+  border-left: 1px solid #cbd6da;
+}
+
+.oto .footer-grid nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  list-style: none;
+}
+
+.oto .footer-grid nav strong {
+  margin-bottom: 4px;
+  font-size: 1.02rem;
+}
+
+.oto .footer-grid nav a {
+  display: block;
+  padding-block: 5px;
+  color: #53616a;
+  font-size: 0.95rem;
+}
+
+/* RESPONSIVIDADE - FOOTER */
+
+@media (min-width: 601px) {
+  .oto .footer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .oto .landing-footer {
+    padding: 88px 0 80px;
+  }
+
+  .oto .footer-grid {
+    gap: 36px 28px;
+  }
+
+  .oto .footer-logo {
+    width: 210px;
+    height: 64px;
+  }
+
+  .oto .footer-grid nav {
+    padding-left: 22px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .oto .landing-footer {
+    padding: 60px 0 104px;
+  }
+
+  .oto .footer-grid {
+    grid-template-columns: 1.7fr 1fr 1fr 1fr;
+    gap: 42px;
+  }
+
+  .oto .footer-brand-block {
+    grid-column: auto;
+    gap: 13px;
+  }
+
+  .oto .footer-logo {
+    width: 215px;
+    height: 70px;
+    margin-bottom: 5px;
+  }
+
+  .oto .footer-grid nav {
+    gap: 6px;
+    padding-left: 24px;
+  }
+
+  .oto .footer-grid nav ul {
+    gap: 6px;
+  }
+
+  .oto .footer-grid nav a {
+    padding-block: 3px;
+  }
+}

@@ -8,7 +8,8 @@ function Planos({
   variante = 'oto',
   classe = '',
   introducao,
-  descricao
+  descricao,
+  botaoFinal
 }) {
   return (
     <section
@@ -41,6 +42,15 @@ function Planos({
           ))}
         </div>
 
+        {/* Botão único abaixo dos planos */}
+        {botaoFinal && (
+          <a
+            className="plans-bottom-cta"
+            href={botaoFinal.href}
+          >
+            {botaoFinal.texto}
+          </a>
+        )}
       </div>
     </section>
   );

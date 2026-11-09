@@ -3,6 +3,11 @@ import Hero from './Hero.jsx';
 import Sobre from './Sobre.jsx';
 import Diferencial from './Diferencial.jsx';
 import Planos from './Planos.jsx';
+import Review from './Review.jsx';
+import Contato from './Contato.jsx';
+import FAQ from './FAQ.jsx';
+import CTAFinal from './CTAFinal.jsx';
+import Footer from './Footer.jsx';
 
 // Compartilha as decorações sem acrescentar elementos quando não há imagens.
 function AreaDecorada({ decoracao, classe, classeImagem, children }) {
@@ -24,7 +29,7 @@ function AreaDecorada({ decoracao, classe, classeImagem, children }) {
   );
 }
 
-// Estrutura da landing page; identidade e dados ficam na página.
+// Estrutura compartilhada por as páginas; identidade e dados ficam nas páginas.
 function LandingPage({ dados }) {
   return (
     <div className={dados.classe}>
@@ -41,7 +46,18 @@ function LandingPage({ dados }) {
           <Diferencial {...dados.diferenciais} />
         </AreaDecorada>
         <Planos {...dados.planos} />
+        {dados.avaliacoes && <AreaDecorada
+          decoracao={dados.decoracaoAvaliacoes}
+          classe="landing-reviews-decorated"
+          classeImagem="reviews-bg-arrow"
+        >
+          <Review {...dados.avaliacoes} />
+          <Contato {...dados.contato} />
+        </AreaDecorada>}
+        {dados.faq && <FAQ {...dados.faq} />}
+        {dados.chamadaFinal && <CTAFinal {...dados.chamadaFinal} />}
       </main>
+      {dados.footer && <Footer {...dados.footer} />}
     </div>
   );
 }

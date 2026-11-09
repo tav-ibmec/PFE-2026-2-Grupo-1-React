@@ -8,6 +8,7 @@ function Header({
   linkMatricula,
   classeBotao = 'button-blue',
   onContato,
+  linkAgendamento,
 }) {
   const [menuAberto, setMenuAberto] = useState(false);
   const idNavegacao = useId();
@@ -70,8 +71,30 @@ function Header({
             </li>
           )}
 
+          {/* Agendamento no menu mobile */}
+          {linkAgendamento && (
+            <li className="agendamento-mobile">
+              <a
+                href={linkAgendamento}
+                onClick={() => setMenuAberto(false)}
+              >
+                Agendamento
+              </a>
+            </li>
+          )}
+
         </ul>
       </nav>
+
+      {/* Botão de agendamento */}
+      {linkAgendamento && (
+        <a
+          className="header-agendamento"
+          href={linkAgendamento}
+        >
+          Agendamento
+        </a>
+      )}
 
       {/* Ações do cabeçalho */}
       {linkAluno && (

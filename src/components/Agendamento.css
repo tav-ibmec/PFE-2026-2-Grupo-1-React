@@ -1,0 +1,308 @@
+/* AGENDA - ESTILOS COMPARTILHADOS */
+
+.agendamento,
+.agenda-modal {
+  --agenda-livre: var(--cor-azul-oto, #0898dd);
+  --agenda-livre-fg: #141414;
+  --agenda-ocupado: #e3e3e3;
+  --agenda-ocupado-fg: #595959;
+  --agenda-line: #d8d8d8;
+  --agenda-muted: #5a5a5a;
+}
+
+/* Cores específicas da One to One */
+.oto .agendamento,
+.oto .agenda-modal {
+  --agenda-livre: var(--cor-azul-oto, #0898dd);
+  --agenda-livre-fg: var(--cor-azul-noite-oto, #001a27);
+  --cor-titulo-agenda: var(--cor-azul-escuro-oto);
+}
+
+/* Caixa principal */
+.agendamento {
+  min-width: 0;
+  padding: 32px 30px 34px;
+  border-radius: 22px;
+  background: #fff;
+  color: #161616;
+}
+
+.agendamento h2 {
+  margin-bottom: 20px;
+  color: var(--cor-titulo-agenda, #141414);
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+.agendamento .sub {
+  margin-bottom: 16px;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Legenda */
+.agendamento .legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin-bottom: 16px;
+  font-size: 0.88rem;
+}
+
+.agendamento .legenda i {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+  border-radius: 4px;
+  vertical-align: -2px;
+}
+
+.agenda-legenda-livre {
+  background: var(--agenda-livre);
+}
+
+.agenda-legenda-ocupado {
+  background: var(--agenda-ocupado);
+}
+
+/* Navegação entre semanas */
+.agendamento .nav {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.agendamento .agenda-semana-texto {
+  grid-column: auto;
+  order: initial;
+  font-weight: 700;
+  text-align: center;
+}
+
+.agendamento .nav button {
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid var(--agenda-line);
+  border-radius: 8px;
+  background: #fff;
+  color: #161616;
+  font: inherit;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+
+.agendamento .nav button:disabled {
+  background: #f3f3f3;
+  color: #6b6b6b;
+  cursor: not-allowed;
+}
+
+/* Tabela de horários */
+.agendamento .scroll {
+  overflow-x: auto;
+  border: 1px solid var(--agenda-line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.agendamento table {
+  width: 100%;
+  min-width: 440px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.agendamento th,
+.agendamento td {
+  padding: 5px 2px;
+  border-bottom: 1px solid var(--agenda-line);
+  text-align: center;
+}
+
+.agendamento th {
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.agendamento thead th:first-child {
+  width: 48px;
+}
+
+.agendamento th small {
+  display: block;
+  color: var(--agenda-muted);
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+.agendamento tbody th {
+  color: var(--agenda-muted);
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+.agendamento tr:last-child th,
+.agendamento tr:last-child td {
+  border-bottom: 0;
+}
+
+/* Botões dos horários */
+.agendamento .slot {
+  width: 100%;
+  min-height: 34px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--agenda-livre);
+  color: var(--agenda-livre-fg);
+  font: inherit;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.agendamento .slot:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.agendamento .slot:disabled {
+  background: var(--agenda-ocupado);
+  color: var(--agenda-ocupado-fg);
+  cursor: not-allowed;
+}
+
+/* Confirmação e botões de testes */
+.agendamento .agenda-status {
+  min-height: 1.5em;
+  margin: 12px 0;
+  font-weight: 600;
+}
+
+.agendamento .reset {
+  min-height: 40px;
+  margin: 0 6px 6px 0;
+  padding: 6px 12px;
+  border: 1px solid var(--agenda-line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--agenda-muted);
+  font: inherit;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.agendamento .agenda-testes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.agendamento .agenda-dados {
+  margin-top: 12px;
+  padding: 12px;
+  overflow-x: auto;
+  border: 1px solid var(--agenda-line);
+  border-radius: 8px;
+  background: #fff;
+  color: #161616;
+  font: 0.8rem/1.5 Consolas, monospace;
+}
+
+/* AGENDA - MODAL DE CONFIRMAÇÃO */
+
+.agenda-modal {
+  width: min(92vw, 380px);
+  margin: auto;
+  padding: 20px;
+  border: 1px solid var(--agenda-line);
+  border-radius: 12px;
+  background: #fff;
+  color: #161616;
+}
+
+.agenda-modal::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.agenda-modal h2 {
+  margin-bottom: 4px;
+  color: #141414;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.agenda-modal .agenda-resumo {
+  margin: 6px 0 12px;
+  color: var(--agenda-muted);
+}
+
+.agenda-modal label {
+  display: block;
+  margin-top: 12px;
+  color: #161616;
+  font-size: 0.9rem;
+}
+
+.agenda-modal input {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  margin-top: 4px;
+  padding: 10px;
+  border: 1px solid var(--agenda-line);
+  border-radius: 6px;
+  background: #fff;
+  color: #161616;
+  font: inherit;
+}
+
+.agenda-modal .agenda-erro {
+  min-height: 1.4em;
+  margin-top: 8px;
+  color: #b3261e;
+  font-size: 0.85rem;
+}
+
+.agenda-modal .acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.agenda-modal .acoes button {
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid var(--agenda-line);
+  border-radius: 6px;
+  background: #fff;
+  color: #161616;
+  font: inherit;
+  cursor: pointer;
+}
+
+.agenda-modal .acoes button[type="submit"] {
+  border-color: var(--agenda-livre);
+  background: var(--agenda-livre);
+  color: var(--agenda-livre-fg);
+  font-weight: 600;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1100px) {
+  .agendamento {
+    padding: 24px 16px;
+  }
+
+  .agendamento .nav {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .agendamento .agenda-semana-texto {
+    grid-column: 1 / -1;
+    order: -1;
+  }
+}

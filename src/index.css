@@ -157,3 +157,77 @@ nav ul {
     margin-block: 0;
 }
 
+/* AVALIAÇÕES - LAYOUT COMPARTILHADO */
+
+@media (min-width: 1025px) {
+  #main-content .reviews-grid--3-2 {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 26px;
+  }
+
+  /* Três cards na primeira linha */
+  #main-content .reviews-grid--3-2 > .review-card {
+    grid-column: span 2;
+  }
+
+  /* Dois cards centralizados na segunda linha */
+  #main-content .reviews-grid--3-2 > .review-card:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+
+  #main-content .reviews-grid--3-2 > .review-card:nth-child(5) {
+    grid-column: 4 / span 2;
+  }
+}
+
+/* Mantém os depoimentos centralizados */
+#main-content .reviews-grid--3-2 > .review-card {
+  text-align: center;
+}
+
+/* Estrelas no canto superior esquerdo */
+#main-content .reviews-grid--3-2 > .review-card .stars {
+  text-align: left;
+  transform: translateY(-15px);
+}
+
+/* Foto/inicial e nome no canto inferior esquerdo */
+#main-content .reviews-grid--3-2 > .review-card figcaption {
+  justify-content: flex-start;
+  text-align: left;
+  margin-top: auto;
+  transform: translateY(12px);
+}
+
+@media (min-width: 1025px) {
+  .contact-panel > .agendamento {
+    align-self: center;
+    justify-self: end;
+    width: 100%;
+  }
+}
+
+/* Coluna esquerda */
+.contact-panel > .contact-copy {
+  position: relative;
+}
+
+/* Linha vertical entre as colunas */
+.contact-panel > .contact-copy::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -1.8vw;
+
+  width: 1px;
+  background: rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+}
+
+@media (min-width: 1201px) {
+  .contact-panel > .contact-copy::after {
+    right: 45px;
+  }
+}
