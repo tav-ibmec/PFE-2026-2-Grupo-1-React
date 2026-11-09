@@ -1,6 +1,6 @@
 # Sprint 2 — Responsáveis, estrutura e componentes principais
 
-## Objetivo da Sprints
+## Objetivo da Sprint
 
 Definir o responsável por cada função, organizar a ordem dos envios, criar a estrutura do projeto em React e desenvolver os componentes principais, aplicando a troca de "HUB" por "Início" e o cabeçalho fixo.
 
@@ -63,4 +63,3 @@ A Sprint 2 entregou:
 ## Retrospectiva
 
 A divisão por arquivos deixou claro o que cada integrante pode alterar, e a organização dos envios evitou conflitos no repositório. Como o HUB tem alterações de dois integrantes, a combinação de que a Rebeca envia primeiro e o Lucas altera depois foi importante. A estrutura base e o padrão de nomes e props permitiram o trabalho em paralelo.
-

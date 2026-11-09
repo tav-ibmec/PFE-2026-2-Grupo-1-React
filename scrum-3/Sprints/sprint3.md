@@ -1,66 +1,55 @@
-# Sprint 3 — Seções, Fisioterapia e fidelidade ao protótipo
+# Sprint 3 — Reorganização em etapas e HUB V1
 
 ## Objetivo da Sprint
 
-Concluir as seções das landing pages, iniciar a página de Fisioterapia, aplicar as alterações solicitadas e aproximar a interface do protótipo.
+Reorganizar as responsabilidades em seis etapas progressivas, por causa da dificuldade de sincronizar o desenvolvimento dividido por componentes, definir a ordem de postagem no GitHub e publicar a primeira etapa.
 
 ## Atividades planejadas
 
-- Fazer o envio final do HUB, com imagens e fontes ajustadas.
-- Separar as informações de cada marca em arquivos de dados.
-- Desenvolver o Sobre Nós e os Diferenciais.
-- Desenvolver as seções de planos e avaliações.
-- Desenvolver o FAQ e a Chamada Final.
-- Retirar os botões "Matricule-se" do Header e dos planos.
-- Ajustar o tamanho de algumas imagens e fontes.
-- Iniciar a página de Fisioterapia, reaproveitando os componentes.
-- Migrar os estilos de cada seção para o arquivo do seu componente.
-- Comparar as telas com o protótipo.
+- Dividir o projeto em seis etapas progressivas, do HUB inicial até a versão completa.
+- Definir o responsável por cada etapa.
+- Definir a ordem de postagem no GitHub: 01 → 02 → 03 → 04 → 05 → 06.
+- Definir o procedimento de postagem: substituir os arquivos pela versão da etapa, mantendo as pastas de documentação e o README, e testar com `npm ci` e `npm run dev` antes do commit.
+- Postar a etapa 01 — HUB V1.
 
 ## Distribuição das atividades
 
-- **Rebeca:** ajuste de imagens e fontes do HUB e envio final do HUB.
-- **Yasmin:** arquivos de dados da PKZ e da One to One em `src/data/`.
-- **João:** retirada do botão "Matricule-se" do Header, Sobre Nós e Diferenciais.
-- **Manuela:** `PlansSection.jsx` e `ReviewsSection.jsx`, sem os botões "Matricule-se" nos planos.
-- **Pedro:** `FAQ.jsx` e `ClosingCTA.jsx`.
-- **Lucas:** início da página de Fisioterapia.
-- **Equipe:** migração dos estilos, ajuste de imagens e fontes nos próprios componentes e comparação com o protótipo.
+- **Rebeca:** etapa 01 — HUB V1 e postagem da etapa.
+- **Yasmin:** etapa 02 — One to One, Parte 1.
+- **João:** etapa 03 — One to One, Parte 2.
+- **Manuela:** etapa 04 — PKZ Lab, Parte 1.
+- **Pedro:** etapa 05 — PKZ Lab, Parte 2.
+- **Lucas:** etapa 06 — Versão completa, com o HUB V2 e a página de Fisioterapia.
+- **Equipe:** ordem e procedimento de postagem e atualização da documentação Scrum.
 
 ## Resultado esperado
 
-Ter as seções das landing pages desenvolvidas, as alterações solicitadas aplicadas e a página de Fisioterapia em andamento, com a interface mais próxima do protótipo.
+Ter as responsabilidades reorganizadas em etapas, a ordem de postagem definida e a etapa 01 publicada no GitHub.
 
 ## Critérios de conclusão
 
-- [x] Envio final do HUB realizado.
-- [x] Arquivos de dados criados.
-- [x] Seções das landing pages desenvolvidas.
-- [x] Botões "Matricule-se" retirados do Header e dos planos.
-- [x] Imagens e fontes ajustadas.
-- [x] Página de Fisioterapia iniciada.
-- [x] Telas comparadas com o protótipo.
-- [x] Estilos migrados para os componentes.
+- [x] Seis etapas definidas, cada uma com um responsável.
+- [x] Ordem de postagem definida.
+- [x] Procedimento de postagem definido.
+- [x] Etapa 01 — HUB V1 postada.
 
 ## Status da Sprint
 
-A Sprint foi concluída em 08/11/2026, com as seções das landing pages desenvolvidas, as alterações solicitadas aplicadas, o envio final do HUB realizado e a página de Fisioterapia iniciada.
+A Sprint foi concluída em 08/11/2026. A organização das responsabilidades foi alterada de funções por componente para seis etapas progressivas, a ordem de postagem foi definida e a Rebeca postou a etapa 01 — HUB V1.
 
 ## Impedimentos e pendências
 
-- O agendamento continua em aberto.
+- Cada etapa depende da postagem da anterior.
+- O agendamento continua dependendo da decisão do professor.
 
 ## Revisão da Sprint
 
 A Sprint 3 entregou:
-- o envio final do HUB, com imagens e fontes ajustadas (Rebeca);
-- as informações de cada marca separadas em arquivos de dados (Yasmin);
-- o Sobre Nós, os Diferenciais e o Header sem o botão "Matricule-se" (João);
-- as seções de planos e avaliações, sem os botões "Matricule-se" (Manuela);
-- o FAQ e a Chamada Final (Pedro);
-- o início da página de Fisioterapia (Lucas);
-- a migração dos estilos, o ajuste de imagens e fontes e a comparação com o protótipo (equipe).
+- a reorganização das responsabilidades em seis etapas progressivas;
+- o responsável por cada etapa: Rebeca (01), Yasmin (02), João (03), Manuela (04), Pedro (05) e Lucas (06);
+- a ordem de postagem 01 → 06 e o procedimento de postagem;
+- a etapa 01 — HUB V1, com apresentação das empresas, navegação, contato e rodapé (Rebeca).
 
 ## Retrospectiva
 
-O trabalho em paralelo, com cada integrante nos próprios arquivos, evitou conflitos, e o reaproveitamento dos componentes acelerou a página de Fisioterapia. A separação dos estilos exigiu mais tempo, porque as regras de responsividade da versão Vanilla estavam agrupadas no fim do CSS.
+A divisão por componentes dificultou a sincronização do desenvolvimento entre os seis integrantes. A organização em etapas progressivas, em que cada versão acumula as anteriores, deu uma sequência clara de postagem e reduziu o risco de sobrescrever alterações.

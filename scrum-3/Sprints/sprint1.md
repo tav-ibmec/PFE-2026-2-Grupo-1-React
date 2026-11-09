@@ -30,27 +30,31 @@ Ter as atribuições definidas, o prazo e as mudanças registrados e a estrutura
 
 ## Critérios de conclusão
 
-- [ ] Documentos do repositório anterior enviados ao repositório React.
-- [ ] Atribuições definidas para todos os integrantes.
-- [ ] Prazo de entrega registrado.
-- [ ] Página de Fisioterapia e alterações solicitadas incluídas no Product Backlog.
-- [ ] Pendência do agendamento registrada.
-- [ ] Estrutura do projeto em React iniciada.
+- [x] Documentos do repositório anterior enviados ao repositório React.
+- [x] Atribuições definidas para todos os integrantes.
+- [x] Prazo de entrega registrado.
+- [x] Página de Fisioterapia e alterações solicitadas incluídas no Product Backlog.
+- [x] Pendência do agendamento registrada.
+- [x] Estrutura do projeto em React iniciada.
 
 ## Status da Sprint
 
-A Sprint está em andamento. Em 06/11/2026, o grupo realizou a reunião de divisão das atribuições e enviou os documentos do repositório anterior para o repositório React.
+A Sprint foi concluída em 06/11/2026. O grupo realizou a reunião de divisão das atribuições, enviou os documentos do repositório anterior para o repositório React e registrou o prazo, a página de Fisioterapia, as alterações solicitadas e a pendência do agendamento.
 
 ## Impedimentos e pendências
 
-- O agendamento depende da confirmação do professor.
-- O prazo até 13/11/2026 é curto para a conversão das páginas e a nova página de Fisioterapia.
-- O desenvolvimento dos componentes depende da estrutura base.
+- O agendamento depende da confirmação do professor e permanece em aberto.
 
 ## Revisão da Sprint
 
-Ao final da Sprint, o grupo deverá verificar se as atribuições, o prazo e as mudanças solicitadas estão registrados e se a estrutura do projeto foi iniciada.
+A Sprint 1 entregou:
+- a divisão das atribuições em frentes de trabalho;
+- os documentos do repositório anterior no repositório React;
+- o prazo de entrega de 13/11/2026 registrado;
+- a página de Fisioterapia e as alterações solicitadas incluídas no Product Backlog;
+- o agendamento registrado como em aberto, aguardando o professor;
+- o início da estrutura do projeto em React.
 
 ## Retrospectiva
 
-O grupo deverá avaliar se a divisão em frentes de trabalho está clara para todos e se o planejamento é viável dentro do prazo.
+A divisão em frentes de trabalho ficou clara para todos, e o planejamento em Sprints curtas se mostrou viável dentro do prazo. A indefinição sobre o agendamento foi registrada desde o início para evitar retrabalho.
