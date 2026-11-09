@@ -1,0 +1,709 @@
+/* COISINHAS GERAIS */
+.oto .eyebrow::before {
+  display: inline-block;
+  width: 44px;
+  height: 2px;
+  margin-right: 12px;
+  vertical-align: middle;
+  transform: translateY(-2px);
+  background: currentColor;
+  content: "";
+}
+
+/* TIPOGRAFIA */
+
+/* Fonte principal e cores */
+.oto {
+  --page: #fff;
+  --ink: var(--cor-azul-escuro-oto);
+  --soft: #53616a;
+  --accent: var(--cor-azul-oto);
+  --eyebrow: var(--cor-azul-escuro-oto);
+  --line: #dfe6e9;
+
+  background: var(--page);
+  color: var(--ink);
+  font-family: "Outfit", Arial, sans-serif;
+}
+
+/* Fonte dos títulos */
+.oto h2,
+.oto h3 {
+  font-family: CocogooseProTrial, "Outfit", Arial, sans-serif;
+  font-weight: 700;
+}
+
+/* IDENTIDADE E HEADER */
+
+.oto .landing-logo {
+  display: flex;
+  width: clamp(90px, 9vw, 120px);
+  height: 44px;
+  flex: none;
+  align-items: center;
+}
+
+.oto .landing-logo img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.oto .landing-nav {
+  background: #fff;
+}
+
+@media (min-width: 1025px) {
+  .oto .landing-nav {
+    background: transparent;
+  }
+}
+
+/* SECTION - HERO - apenas identidade visual da One to One */
+/* Altura, titulo, espacamentos e seta inferior: src/components/Hero.css */
+.oto .oto-hero {
+  background-color: #00466f;
+  background-image: url("/imagens/imagens-padronizacao/assets/one-to-one/Fundo_Hero_OtO.png");
+  color: #fff;
+}
+
+.oto .landing-hero.oto-hero h1 {
+  color: var(--cor-azul-escuro-oto);
+}
+
+.oto .landing-hero.oto-hero h1 span,
+.oto .landing-hero.oto-hero .hero-inner > p {
+  color: #fff;
+}
+
+.oto .landing-hero.oto-hero .scroll-cue {
+  background: #fff;
+  color: var(--cor-azul-escuro-oto, #003b60);
+}
+
+/* SETAS DE FUNDO - (SOBRE + DIFERENCIAL) */
+
+.oto .landing-decorated-area {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--page);
+}
+
+.oto .landing-decorated-area .about-section,
+.oto .landing-decorated-area .difference-section {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+.oto .site-bg-arrow {
+  position: absolute;
+  z-index: 0;
+  display: none;
+  height: auto;
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (min-width: 1201px) {
+  .oto .site-bg-arrow {
+    display: block;
+  }
+
+  /* SETAS_1.png: contornos no lado direito */
+  .oto .site-bg-arrow--right {
+    top: 35%;
+    right: -4%;
+    width: clamp(220px, 23vw, 400px);
+    transform: scaleX(-1);
+  }
+
+  /* SETAS_2.png: preenchidas no canto inferior esquerdo */
+  .oto .site-bg-arrow--left {
+    bottom: -200px;
+    left: -4%;
+    width: clamp(220px, 23vw, 400px);
+  }
+}
+
+/* SECTION - SOBRE NÓS */
+
+.oto .content-wrap {
+  position: relative;
+  width: calc(100% - 40px);
+  max-width: var(--wrap-max, 1560px);
+  margin-inline: auto;
+}
+
+.oto .about-section {
+  position: relative;
+  overflow: hidden;
+  padding: 64px 0;
+  background: var(--page);
+}
+
+.oto .about-grid {
+  display: grid;
+  gap: 36px;
+}
+
+/* Fotografia */
+.oto .about-photo {
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border-radius: 22px;
+  background: #18202a;
+}
+
+.oto .about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 37%;
+}
+
+/* Cabeçalho da seção */
+.oto .section-head {
+  position: relative;
+}
+
+.oto .section-head.has-deco {
+  padding-right: 17vw;
+}
+
+.oto .eyebrow {
+  margin-bottom: 18px;
+  color: var(--eyebrow);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.oto .about-section h2 {
+  font-size: 7.4vw;
+  line-height: 1.13;
+}
+
+.oto .brand-highlight {
+  color: var(--accent);
+}
+
+/* Setas decorativas */
+.oto .section-head .deco {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(17vw - 14px);
+  min-width: 44px;
+  max-width: 82px;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.oto .side-decoration.deco-wide {
+  display: none;
+}
+
+/* Textos */
+.oto .about-content>p {
+  margin-top: 20px;
+  color: var(--soft);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+/* Números da empresa */
+.oto .stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 32px;
+  list-style: none;
+}
+
+.oto .stats>li {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.oto .stats strong {
+  color: var(--ink);
+  font: 400 10vw/1 "Bebas Neue", Impact, sans-serif;
+}
+
+.oto .stats span {
+  margin-top: 6px;
+  color: var(--soft);
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+/* RESPONSIVIDADE - SOBRE NÓS */
+
+@media (min-width: 601px) {
+  .oto .about-section h2 {
+    font-size: 2.6rem;
+  }
+
+  .oto .section-head.has-deco {
+    padding-right: 96px;
+  }
+
+  .oto .about-photo {
+    aspect-ratio: 16 / 10;
+  }
+
+  .oto .stats strong {
+    font-size: 4.1rem;
+  }
+
+  .oto .stats span {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .oto .content-wrap {
+    width: calc(100% - 80px);
+  }
+
+  .oto .about-section {
+    padding: 88px 0;
+  }
+
+  .oto .about-content>p {
+    font-size: 1.12rem;
+  }
+
+  .oto .stats {
+    max-width: 590px;
+    gap: 20px;
+    margin-top: 44px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .oto .about-section {
+    padding: 128px 0 0;
+  }
+
+  .oto .about-grid {
+    grid-template-columns: 0.72fr 1fr;
+    align-items: center;
+    gap: 4vw;
+  }
+
+  .oto .about-photo {
+    aspect-ratio: auto;
+    height: 46vw;
+    min-height: 560px;
+    max-height: 670px;
+    border-radius: 24px;
+  }
+
+  .oto .about-content {
+    max-width: 780px;
+  }
+
+  .oto .about-content>p {
+    margin-top: 24px;
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+
+  .oto .stats {
+    margin-top: 56px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .oto .content-wrap {
+    width: 88%;
+  }
+  .oto .about-section .section-head,
+.oto .about-section .about-content,
+.oto .about-section .content-wrap {
+    position: static;
+  }
+  .oto .section-head.has-deco {
+    padding-right: 0;
+  }
+}
+
+/* SECTION - NOSSO DIFERENCIAL */
+
+/* Estrutura da seção */
+.oto .difference-section {
+  position: relative;
+  overflow: hidden;
+  padding: 64px 0;
+  background: var(--page);
+}
+
+/* Espaçamento do título */
+.oto .difference-section .section-head {
+  margin-bottom: 115px;
+}
+
+/* Tipografia do título */
+.oto .difference-section h2 {
+  font-size: 7.4vw;
+  line-height: 1.13;
+}
+.oto .service-grid {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Cada serviço */
+.oto .service-card {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+/* Ícones dos serviços */
+.oto .service-card>img {
+  display: block;
+  width: 136px;
+  height: 130px;
+  margin: 0 auto 18px;
+  object-fit: contain;
+}
+
+/* Título dos serviços */
+.oto .service-card h3 {
+  margin-bottom: 10px;
+  color: var(--ink);
+  font-size: 1.25rem;
+}
+
+/* Descrição dos serviços */
+.oto .service-card p {
+  color: var(--soft);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Sinais de adição */
+.oto .service-plus-image {
+  display: block;
+  object-fit: contain;
+}
+
+/* RESPONSIVIDADE - NOSSO DIFERENCIAL */
+
+/* Tablets */
+@media (min-width: 601px) {
+  .oto .difference-section h2 {
+    font-size: 2.6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .oto .difference-section {
+    padding: 88px 0;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .oto .difference-section {
+    padding: 130px 0 130px;
+  }
+
+  .oto .difference-section h2 {
+    font-size: 3rem;
+  }
+
+  .oto .service-grid {
+    grid-template-columns:
+      minmax(0, 1fr) 44px minmax(0, 1fr) 44px minmax(0, 1fr);
+
+    align-items: center;
+    gap: 18px;
+  }
+
+  .oto .service-card {
+    max-width: none;
+  }
+}
+
+/* SECTION - NOSSOS PLANOS */
+
+/* Estrutura e fundo */
+.oto .plans-section {
+  position: relative;
+  overflow: hidden;
+  padding: 72px 0 80px;
+  background-color: var(--cor-azul-escuro-oto);
+  color: #fff;
+}
+
+/* Estampa de fundo */
+.oto .oto-plans-pattern::before {
+  position: absolute;
+  inset: 0;
+  background-image: url("/imagens/imagens-padronizacao/assets/one-to-one/Pattern_One_to_One.png");
+  background-position: center;
+  background-size: 1400px auto;
+  opacity: var(--pattern-opacity, 0.05);
+  pointer-events: none;
+  content: "";
+}
+
+/* Conteúdo acima da estampa */
+.oto .plans-section>.content-wrap {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+/* Subtítulo com duas linhas decorativas */
+.oto .plans-section .eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #fff;
+}
+
+.oto .plans-section .eyebrow::before,
+.oto .plans-section .eyebrow::after {
+  display: block;
+  width: 40px;
+  height: 2px;
+  flex: none;
+  margin: 0;
+  transform: none;
+  background: currentColor;
+  content: "";
+}
+
+/* Título */
+.oto .plans-section h2 {
+  color: #fff;
+  font-size: 7.4vw;
+  line-height: 1.13;
+}
+
+/* JORNADA */
+.oto .plans-section h2 .brand-highlight {
+  color: #b3ecff;
+}
+
+.oto .plans-section .nowrap {
+  white-space: nowrap;
+}
+
+/* Grade de cartões */
+.oto .plans-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  max-width: 420px;
+  margin: 48px auto 0;
+}
+
+/* Estrutura dos cartões */
+.oto .oto-plan-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 22px 28px;
+  border-radius: 20px;
+  background: #fff;
+  color: #141414;
+  text-align: center;
+}
+
+/* Número */
+.oto .plan-number {
+  color: var(--cor-azul-escuro-oto);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Nome do plano */
+.oto .oto-plan-card h3 {
+  margin: 8px 0 16px;
+  color: #141414;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+/* Linha abaixo do nome */
+.oto .oto-plan-card h3::after {
+  display: block;
+  width: 120px;
+  max-width: 70%;
+  height: 2px;
+  margin: 4px auto 0;
+  background: var(--cor-azul-gelo-oto);
+  content: "";
+}
+
+/* Descrição */
+.oto .oto-plan-card>p {
+  color: #444;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+/* Lista de benefícios */
+.oto .oto-plan-card ul {
+  display: grid;
+  width: 100%;
+  flex: 1;
+  align-content: start;
+  gap: 10px;
+  margin: 24px 0 28px;
+  color: #222;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  list-style: none;
+  text-align: left;
+}
+
+.oto .oto-plan-card li {
+  position: relative;
+  padding-left: 27px;
+}
+
+/* Ícone de confirmação */
+.oto .oto-plan-card li::before {
+  position: absolute;
+  top: 0.1em;
+  left: 0;
+  display: grid;
+  width: 16px;
+  height: 16px;
+  place-items: center;
+  border-radius: 4px;
+  background: #37a64a;
+  color: #fff;
+  content: "✓";
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Card em destaque */
+.oto .featured-plan {
+  box-shadow:
+    0 0 0 4px var(--cor-azul-gelo-oto),
+    0 12px 50px 10px rgba(179, 236, 255, 0.3);
+}
+
+/* Selo Mais Escolhido */
+.oto .featured-label {
+  position: absolute;
+  top: -26px;
+  right: -24px;
+  padding: 13px 20px;
+  border-radius: 10px;
+  background: var(--cor-azul-gelo-oto);
+  color: var(--cor-azul-escuro-oto);
+  font-size: 0.85rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* Botão único abaixo dos planos */
+
+/* RESPONSIVIDADE - BOTÃO DOS PLANOS */
+
+/* RESPONSIVIDADE - NOSSOS PLANOS */
+
+@media (min-width: 601px) {
+  .oto .plans-section h2 {
+    font-size: 2.6rem;
+  }
+
+  .oto .plans-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 24px;
+    max-width: 704px;
+  }
+}
+
+@media (min-width: 768px) {
+  .oto .plans-section {
+    padding: 85px 0 110px;
+  }
+
+  .oto .plans-section .eyebrow::before,
+.oto .plans-section .eyebrow::after {
+    width: 70px;
+  }
+
+  .oto .plans-grid {
+    margin-top: 70px;
+  }
+
+  .oto .oto-plan-card {
+    padding: 36px 30px 32px;
+  }
+
+  .oto .oto-plan-card h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .oto .plans-section {
+    padding: 85px 0 90px;
+  }
+
+  .oto .plans-grid {
+    margin-top: 96px;
+  }
+
+  .oto .plans-section .oto-plans-grid {
+    max-width: 704px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .oto .plans-section .oto-plans-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+    gap: 24px;
+    max-width: 1350px;
+  }
+
+  .oto .oto-plan-card {
+    min-height: 420px;
+    padding: 36px 26px 24px;
+  }
+
+  /* Segundo e quarto cartões mais baixos */
+  .oto .oto-plan-card:nth-child(even) {
+    margin-top: 100px;
+  }
+
+  .oto .oto-plan-card h3 {
+    font-size: 1.6rem;
+  }
+
+  .oto .oto-plan-card ul {
+    margin-top: 26px;
+    font-size: 0.92rem;
+  }
+
+  .oto .oto-plans-pattern::before {
+    background-size: 2300px auto;
+  }
+}
+

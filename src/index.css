@@ -141,3 +141,19 @@ nav ul {
     --gutter: 6vw;
   }
 }
+
+/* LANDING PAGES - ESPAÇAMENTO ENTRE SEÇÕES */
+
+/* Evita espaçamentos criados pelo layout do main */
+.oto > #main-content {
+    display: block;
+}
+
+/* Evita alturas mínimas e margens extras */
+.oto .about-section,
+.oto .difference-section {
+    height: auto;
+    min-height: 0;
+    margin-block: 0;
+}
+

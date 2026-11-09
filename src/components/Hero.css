@@ -1,0 +1,143 @@
+/* HERO - estrutura compartilhada entre One to One */
+
+.oto .landing-hero {
+  position: relative;
+  display: flex;
+  height: 100svh;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 120px 6% 64px;
+  overflow: hidden;
+  border-radius: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+}
+
+.oto .landing-hero .hero-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+/* Título principal e linha destacada */
+.oto .landing-hero h1 {
+  margin: 0;
+  font-family: CocogooseProTrial, "Outfit", Arial, sans-serif;
+  font-size: clamp(2.5rem, 5vw, 6rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.oto .landing-hero h1 span {
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Descrição abaixo do título */
+.oto .landing-hero .hero-inner > p {
+  max-width: 800px;
+  margin: 30px auto 0;
+  font-size: clamp(1rem, 1.7vw, 1.5rem);
+  line-height: 1.3;
+  text-align: center;
+}
+
+/* Seta inferior compartilhada */
+.oto .landing-hero .scroll-cue {
+  position: absolute;
+  z-index: 2;
+  right: 50%;
+  bottom: 0;
+  display: grid;
+  width: 184px;
+  height: 44px;
+  place-items: center;
+  transform: translateX(50%);
+  border-radius: 0;
+  clip-path: path("M 0 44 H 13 C 51 44 50 0 92 0 C 134 0 133 44 171 44 H 184 Z");
+}
+
+.oto .landing-hero .scroll-cue span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  transform: rotate(45deg);
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+}
+
+/* Medidas do título e da descrição. */
+.oto .oto-hero h1 {
+  line-height: 3;
+}
+
+.oto .oto-hero h1 span {
+  font-size: 1.5em;
+  transform: translateY(-140px);
+}
+
+.oto .oto-hero .hero-inner > p {
+  font-size: 1.5rem;
+  transform: translateY(-230px);
+}
+
+/* Celular: evita que os deslocamentos grandes cortem o conteudo. */
+@media (max-width: 767px) {
+  .oto .landing-hero {
+    height: auto;
+    min-height: 100svh;
+    padding: 120px 6% 72px;
+    justify-content: center;
+  }
+
+  .oto .landing-hero h1 {
+    font-size: clamp(1.9rem, 7vw, 2.8rem);
+    line-height: 1.15;
+  }
+
+  .oto .landing-hero .hero-inner > p {
+    font-size: clamp(0.95rem, 3.7vw, 1.15rem);
+  }
+
+  .oto .oto-hero h1 {
+    line-height: 1.15;
+  }
+
+  .oto .oto-hero h1 span {
+    font-size: 1.25em;
+    transform: none;
+  }
+
+  .oto .oto-hero .hero-inner > p {
+    font-size: clamp(0.95rem, 3.7vw, 1.15rem);
+    transform: none;
+  }
+}
+
+/* Animação da seta de rolagem */
+@keyframes scrollArrowFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(45deg);
+  }
+
+  50% {
+    transform: translateY(-6px) rotate(45deg);
+  }
+}
+
+.landing-hero .scroll-cue span {
+  animation: scrollArrowFloat 1.8s ease-in-out infinite;
+}
+
+/* Acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  .landing-hero .scroll-cue span {
+    animation: none;
+  }
+}
