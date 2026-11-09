@@ -1,4 +1,4 @@
-# Daily Scrum — React
+# Daily Scrum 1 — React
 
 **Data:** 6 de novembro de 2026  
 **Equipe:** Grupo 1 — Sexta-feira  
@@ -63,4 +63,3 @@ A equipe iniciou o projeto React, dividiu as atribuições, definiu o prazo de e
 ---
 
 *Registro do Daily Scrum de início do projeto React — 06/11/2026.*
-

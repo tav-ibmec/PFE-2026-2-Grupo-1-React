@@ -36,4 +36,3 @@ As frentes de trabalho definidas na reunião de 06/11 foram organizadas em seis 
 ## Observações
 
 Cada função tem um responsável e cada integrante trabalha nos próprios arquivos, o que permite desenvolver em paralelo e reduz o risco de conflitos no repositório.
-
