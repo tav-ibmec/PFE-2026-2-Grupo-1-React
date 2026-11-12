@@ -145,13 +145,16 @@ nav ul {
 /* LANDING PAGES - ESPAÇAMENTO ENTRE SEÇÕES */
 
 /* Evita espaçamentos criados pelo layout do main */
-.oto > #main-content {
+.oto > #main-content,
+.pkz > #main-content {
     display: block;
 }
 
 /* Evita alturas mínimas e margens extras */
 .oto .about-section,
-.oto .difference-section {
+.pkz .about-section,
+.oto .difference-section,
+.pkz .difference-section {
     height: auto;
     min-height: 0;
     margin-block: 0;
@@ -199,6 +202,7 @@ nav ul {
   margin-top: auto;
   transform: translateY(12px);
 }
+/* CONTATO - ALINHAMENTO COMPARTILHADO */
 
 @media (min-width: 1025px) {
   .contact-panel > .agendamento {

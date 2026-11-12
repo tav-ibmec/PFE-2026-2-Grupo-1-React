@@ -14,7 +14,7 @@ function Planos({
   return (
     <section
       className={`plans-section ${classe}`}
-      id="planos"
+      id={variante === 'pkz' ? 'pacotes' : 'planos'}
       aria-labelledby={tituloId}
     >
       <div className="content-wrap centered-section">
@@ -31,7 +31,11 @@ function Planos({
         )}
 
         <div
-          className="plans-grid oto-plans-grid"
+          className={`plans-grid ${
+            variante === 'pkz'
+              ? 'pkz-plans-grid'
+              : 'oto-plans-grid'
+          }`}
         >
           {itens.map((plano) => (
             <PlanCard

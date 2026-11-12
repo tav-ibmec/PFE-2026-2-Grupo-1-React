@@ -17,7 +17,7 @@ function HUB() {
             {/* Logo PKZ Lab */}
             <a
               className="hub-brand"
-              href="#empresas"
+              href="/pkz-lab"
               aria-label="Conheça a PKZ Lab"
             >
               <img
@@ -165,7 +165,7 @@ function HUB() {
                   </p>
                 </div>
 
-                <a className="hub-button pkz-button" href="#empresas">
+                <a className="hub-button pkz-button" href="/pkz-lab">
                   CONHEÇA A PKZ
                 </a>
               </article>

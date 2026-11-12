@@ -1,9 +1,11 @@
-function PlanCard({ plano }) {
+function PlanCard({ plano, variante = 'oto' }) {
+  const ehPKZ = variante === 'pkz';
   const tituloId = `${plano.id}-titulo`;
 
   return (
     <article
-      className={`plan-card oto-plan-card ${plano.destaque ? 'featured-plan' : ''}`}
+      className={`plan-card ${ehPKZ ? 'pkz-plan-card' : 'oto-plan-card'
+        } ${plano.destaque ? 'featured-plan' : ''}`}
       id={plano.id}
       aria-labelledby={tituloId}
     >
@@ -13,7 +15,11 @@ function PlanCard({ plano }) {
       )}
 
       {/* Identificação do plano ou pacote */}
-              <span className="plan-number">{plano.numero}</span>
+      {ehPKZ ? (
+        <span className="plan-label">pacote</span>
+      ) : (
+        <span className="plan-number">{plano.numero}</span>
+      )}
 
       {/* Nome */}
       <h3 id={tituloId}>{plano.nome}</h3>

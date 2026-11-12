@@ -1,6 +1,6 @@
-/* HERO - estrutura compartilhada entre One to One */
+/* HERO - estrutura compartilhada entre One to One e PKZ Lab */
 
-.oto .landing-hero {
+:is(.oto, .pkz) .landing-hero {
   position: relative;
   display: flex;
   height: 100svh;
@@ -17,7 +17,7 @@
   text-align: center;
 }
 
-.oto .landing-hero .hero-inner {
+:is(.oto, .pkz) .landing-hero .hero-inner {
   position: relative;
   z-index: 1;
   width: 100%;
@@ -26,7 +26,7 @@
 }
 
 /* Título principal e linha destacada */
-.oto .landing-hero h1 {
+:is(.oto, .pkz) .landing-hero h1 {
   margin: 0;
   font-family: CocogooseProTrial, "Outfit", Arial, sans-serif;
   font-size: clamp(2.5rem, 5vw, 6rem);
@@ -34,13 +34,13 @@
   line-height: 1.1;
 }
 
-.oto .landing-hero h1 span {
+:is(.oto, .pkz) .landing-hero h1 span {
   display: inline-block;
   line-height: 1;
 }
 
 /* Descrição abaixo do título */
-.oto .landing-hero .hero-inner > p {
+:is(.oto, .pkz) .landing-hero .hero-inner > p {
   max-width: 800px;
   margin: 30px auto 0;
   font-size: clamp(1rem, 1.7vw, 1.5rem);
@@ -49,7 +49,7 @@
 }
 
 /* Seta inferior compartilhada */
-.oto .landing-hero .scroll-cue {
+:is(.oto, .pkz) .landing-hero .scroll-cue {
   position: absolute;
   z-index: 2;
   right: 50%;
@@ -63,7 +63,7 @@
   clip-path: path("M 0 44 H 13 C 51 44 50 0 92 0 C 134 0 133 44 171 44 H 184 Z");
 }
 
-.oto .landing-hero .scroll-cue span {
+:is(.oto, .pkz) .landing-hero .scroll-cue span {
   display: block;
   width: 12px;
   height: 12px;
@@ -73,48 +73,48 @@
 }
 
 /* Medidas do título e da descrição. */
-.oto .oto-hero h1 {
+:is(.oto, .pkz) .oto-hero h1 {
   line-height: 3;
 }
 
-.oto .oto-hero h1 span {
+:is(.oto, .pkz) .oto-hero h1 span {
   font-size: 1.5em;
   transform: translateY(-140px);
 }
 
-.oto .oto-hero .hero-inner > p {
+:is(.oto, .pkz) .oto-hero .hero-inner > p {
   font-size: 1.5rem;
   transform: translateY(-230px);
 }
 
 /* Celular: evita que os deslocamentos grandes cortem o conteudo. */
 @media (max-width: 767px) {
-  .oto .landing-hero {
+  :is(.oto, .pkz) .landing-hero {
     height: auto;
     min-height: 100svh;
     padding: 120px 6% 72px;
     justify-content: center;
   }
 
-  .oto .landing-hero h1 {
+  :is(.oto, .pkz) .landing-hero h1 {
     font-size: clamp(1.9rem, 7vw, 2.8rem);
     line-height: 1.15;
   }
 
-  .oto .landing-hero .hero-inner > p {
+  :is(.oto, .pkz) .landing-hero .hero-inner > p {
     font-size: clamp(0.95rem, 3.7vw, 1.15rem);
   }
 
-  .oto .oto-hero h1 {
+  :is(.oto, .pkz) .oto-hero h1 {
     line-height: 1.15;
   }
 
-  .oto .oto-hero h1 span {
+  :is(.oto, .pkz) .oto-hero h1 span {
     font-size: 1.25em;
     transform: none;
   }
 
-  .oto .oto-hero .hero-inner > p {
+  :is(.oto, .pkz) .oto-hero .hero-inner > p {
     font-size: clamp(0.95rem, 3.7vw, 1.15rem);
     transform: none;
   }
