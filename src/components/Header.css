@@ -327,6 +327,10 @@
   background: var(--cor-azul-oto, #009fe3);
   color: #fff;
 }
+.pkz .header-agendamento {
+  background: var(--cor-amarelo-pkz, #f1f000);
+  color: var(--cor-preto-pkz, #141414);
+}
 
 :is(.oto, .pkz) .landing-header .header-agendamento:hover {
   filter: brightness(0.92);
@@ -345,10 +349,16 @@
   color: #fff;
 }
 
+.pkz .agendamento-mobile a {
+  background: var(--cor-amarelo-pkz, #f1f000);
+  color: #141414;
+}
+
 /* Evita que o Header cubra as seções ao navegar */
 .oto section[id],
 .pkz section[id],
-.oto #agendar {
+.oto #agendar,
+.pkz #agendar {
   scroll-margin-top: 120px;
 }
 
@@ -372,7 +382,8 @@
     margin-left: 0;
     justify-self: center;
   }
-  .oto .landing-header .header-agendamento {
+  .oto .landing-header .header-agendamento,
+.pkz .landing-header .header-agendamento {
     display: inline-flex;
     justify-self: end;
   }

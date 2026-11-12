@@ -29,7 +29,8 @@
 
 /* Fonte dos títulos */
 .pkz h2,
-.pkz h3 {
+.pkz h3,
+.pkz .agendamento h1 {
   font-family: CocogooseProTrial, "Outfit", Arial, sans-serif;
   font-weight: 700;
 }
@@ -232,6 +233,14 @@
   line-height: 1.55;
 }
 
+.pkz .about-content h3.closing-line {
+  margin-top: 20px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
 /* Números da empresa */
 .pkz .stats {
   display: flex;
@@ -296,6 +305,10 @@
     font-size: 1.12rem;
   }
 
+  .pkz .about-content h3.closing-line {
+    font-size: 1.15rem;
+  }
+
   .pkz .stats {
     max-width: 590px;
     gap: 20px;
@@ -326,7 +339,8 @@
     max-width: 780px;
   }
 
-  .pkz .about-content>p {
+  .pkz .about-content>p,
+  .pkz .about-content h3.closing-line {
     margin-top: 24px;
     font-size: 1.05rem;
     line-height: 1.5;
@@ -343,8 +357,8 @@
   }
 
   .pkz .about-section .section-head,
-.pkz .about-section .about-content,
-.pkz .about-section .content-wrap {
+  .pkz .about-section .about-content,
+  .pkz .about-section .content-wrap {
     position: static;
   }
 
@@ -373,6 +387,8 @@
   font-size: 7.4vw;
   line-height: 1.13;
 }
+
+/* Grade de serviços - mobile */
 .pkz .service-grid {
   display: grid;
   justify-items: center;
@@ -638,8 +654,41 @@
 }
 
 /* Botão único abaixo dos planos */
+.pkz .plans-bottom-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 64px;
+  padding: 22px 32px;
+
+  border-radius: 20px;
+  background: #f1f000;
+  color: #141414;
+
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: transform 0.25s ease,
+    background-color 0.25s ease;
+}
+
+@media (hover: hover) {
+  .pkz .plans-bottom-cta:hover {
+    transform: translateY(-3px);
+    background: #d5f5ff;
+  }
+}
 
 /* RESPONSIVIDADE - BOTÃO DOS PLANOS */
+@media (max-width: 600px) {
+  .pkz .plans-bottom-cta {
+    margin-top: 40px;
+    padding: 16px 24px;
+    font-size: 1.1rem;
+  }
+}
 
 /* RESPONSIVIDADE - NOSSOS PLANOS */
 
@@ -661,7 +710,7 @@
   }
 
   .pkz .plans-section .eyebrow::before,
-.pkz .plans-section .eyebrow::after {
+  .pkz .plans-section .eyebrow::after {
     width: 70px;
   }
 
@@ -721,3 +770,703 @@
   }
 }
 
+/* SETAS DE FUNDO - (AVALIACOES + CONTATO) */
+
+.pkz .landing-reviews-decorated {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--page);
+}
+
+.pkz .landing-reviews-decorated .reviews-section,
+.pkz .landing-reviews-decorated .contact-section {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+.pkz .reviews-bg-arrow {
+  position: absolute;
+  z-index: 0;
+  display: none;
+  height: auto;
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (min-width: 1201px) {
+  .pkz .reviews-bg-arrow {
+    display: block;
+  }
+
+  /* FOGUETE: contornos no lado esquerdo, perto do Contato */
+  .pkz .reviews-bg-arrow--left {
+    top: -680px;
+    left: -8%;
+    width: clamp(240px, 23vw, 300px);
+  }
+}
+
+/* SECTION - AVALIAÇÕES */
+
+.pkz .reviews-section {
+  position: relative;
+  overflow: hidden;
+  padding: 72px 0 88px;
+  background: var(--page);
+}
+
+/* Título */
+.pkz .reviews-section .section-head {
+  margin-bottom: 30px;
+}
+
+.pkz .reviews-section h2 {
+  font-size: 7.4vw;
+  line-height: 1.13;
+}
+
+/* Introdução */
+.pkz .reviews-section .section-intro {
+  max-width: 850px;
+  margin: 0 0 18px;
+  color: var(--soft);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Grade de avaliações */
+.pkz .reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+/* Cartão */
+.pkz .review-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 18px;
+  margin: 0;
+  padding: 28px 24px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #f5f8fa;
+}
+
+/* Estrelas */
+.pkz .review-card .stars {
+  color: #f0b430;
+  font-size: 1.35rem;
+  letter-spacing: 3px;
+}
+
+/* Depoimento */
+.pkz .review-card blockquote {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.pkz .review-card blockquote p {
+  color: #53616a;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* Identificação do aluno */
+.pkz .review-card figcaption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #141414;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.pkz .review-initial {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: none;
+  place-items: center;
+  border-radius: 50%;
+  background: #3eb5e9;
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* Decoração lateral */
+.pkz .reviews-section>.side-decoration {
+  display: none;
+}
+
+/* RESPONSIVIDADE - AVALIAÇÕES */
+
+@media (min-width: 601px) {
+  .pkz .reviews-section h2 {
+    font-size: 2.6rem;
+  }
+
+  .pkz .reviews-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .pkz .reviews-section {
+    padding: 96px 0 112px;
+  }
+
+  .pkz .reviews-section .section-intro {
+    font-size: 1.12rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .pkz .reviews-section {
+    padding: 130px 0 110px;
+  }
+
+  .pkz .reviews-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+  }
+
+  .pkz .review-card {
+    padding: 32px 28px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .pkz .reviews-section>.side-decoration {
+    position: absolute;
+    top: 50%;
+    left: -100px;
+    display: block;
+    width: 150px;
+    transform: translateY(-50%);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+/* SECTION - CONTATO E AGENDAMENTO */
+
+.pkz .contact-section {
+  position: relative;
+  overflow: hidden;
+  padding: 64px 0;
+  background: var(--page);
+}
+
+/* Painel azul principal */
+.pkz .contact-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: 30px;
+  padding: 30px 14px 16px;
+  border-radius: 22px;
+  background: #000080;
+  color: #fff;
+}
+
+/* Coluna de contato */
+.pkz .contact-copy {
+  min-width: 0;
+  padding: 0 4px;
+}
+
+.pkz .contact-copy .eyebrow {
+  color: #fff;
+}
+
+.pkz .contact-copy h2 {
+  margin-bottom: 20px;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.pkz .contact-copy h2 span {
+  color: #F1F000;
+}
+
+.pkz .contact-copy h2 .nowrap {
+  color: inherit;
+  white-space: nowrap;
+}
+
+.pkz .contact-copy h2~p {
+  margin: 12px 0;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Lista de contatos */
+.pkz .contact-details {
+  display: grid;
+  gap: 18px;
+  font-size: 0.95rem;
+  list-style: none;
+}
+
+.pkz .contact-details li {
+  display: grid;
+  align-items: center;
+  column-gap: 14px;
+}
+
+.pkz .contact-icon-slot {
+  display: block;
+  object-fit: contain;
+}
+
+.pkz .contact-content {
+  display: block;
+  min-width: 0;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.pkz .contact-label {
+  display: block;
+  margin-bottom: 3px;
+  color: #F1F000;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.pkz .contact-details a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.45);
+  text-underline-offset: 4px;
+}
+
+.pkz .contact-details a:hover {
+  text-decoration-color: currentColor;
+}
+
+
+/* Decoração lateral */
+.pkz .contact-section>.side-decoration {
+  display: none;
+}
+
+/* RESPONSIVIDADE - CONTATO */
+
+@media (min-width: 768px) {
+  .pkz .contact-section {
+    padding: 88px 0;
+  }
+
+  .pkz .contact-panel {
+    gap: 36px;
+    padding: 48px 44px 44px;
+    border-radius: 30px;
+  }
+
+  .pkz .contact-details {
+    font-size: 1.02rem;
+  }
+
+  .pkz .contact-details li {
+    column-gap: 16px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .pkz .contact-section {
+    padding: 40px 0 64px;
+  }
+
+  .pkz .contact-panel {
+    grid-template-columns: 1.064fr 1fr;
+    gap: 3.6vw;
+    padding: 50px 4.8vw 55px 5.4vw;
+  }
+
+  .pkz .contact-copy {
+    padding: 0;
+  }
+
+  .pkz .contact-copy .eyebrow {
+    margin-bottom: 36px;
+  }
+
+  .pkz .contact-copy h2 {
+    margin-bottom: 36px;
+  }
+
+  .pkz .contact-copy h2~p {
+    max-width: 470px;
+    margin: 14px 0;
+  }
+}
+
+@media (min-width: 1201px) {
+  .pkz .contact-panel {
+    width: 82%;
+    max-width: 1450px;
+    margin-inline: auto;
+    gap: 50px;
+    padding: 50px 70px 55px 78px;
+  }
+}
+
+/* SECTION - FAQ */
+
+.pkz .faq-section {
+  padding: 64px 0;
+  background: var(--page);
+}
+
+.pkz .faq-section h2 {
+  margin-bottom: 32px;
+  font-size: 7.4vw;
+  line-height: 1.13;
+}
+
+/* Lista de perguntas */
+.pkz .faq-list {
+  border-top: 1px solid var(--line);
+}
+
+.pkz .faq-list details {
+  border-bottom: 1px solid var(--line);
+}
+
+.pkz .faq-list summary {
+  display: flex;
+  min-height: 68px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 4px 16px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  list-style: none;
+}
+
+.pkz .faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Seta das perguntas */
+.pkz .faq-list summary::after {
+  display: block;
+  width: 11px;
+  height: 11px;
+  flex: none;
+  margin-right: 4px;
+  transform: rotate(45deg) translateY(-3px);
+  border-right: 2px solid var(--eyebrow);
+  border-bottom: 2px solid var(--eyebrow);
+  content: "";
+}
+
+/* Seta quando a pergunta está aberta */
+.pkz .faq-list details[open] summary::after {
+  transform: rotate(225deg) translateY(-1px);
+}
+
+/* Respostas */
+.pkz .faq-list details>p {
+  max-width: 1000px;
+  padding: 0 20px 22px 0;
+  color: var(--soft);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* RESPONSIVIDADE - FAQ */
+
+@media (min-width: 601px) {
+  .pkz .faq-section h2 {
+    font-size: 2.6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .pkz .faq-section {
+    padding: 96px 0;
+  }
+
+  .pkz .faq-section h2 {
+    margin-bottom: 42px;
+  }
+
+  .pkz .faq-list summary {
+    min-height: 96px;
+    font-size: 1.12rem;
+  }
+
+  .pkz .faq-list details>p {
+    font-size: 1rem;
+  }
+
+  .pkz .faq-section .eyebrow::before {
+    width: 70px;
+    margin-right: 14px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .pkz .faq-section {
+    padding: 90px 0 110px;
+  }
+
+  .pkz .faq-list summary {
+    min-height: 130px;
+    font-size: 1.2rem;
+  }
+
+  .pkz .faq-question-text {
+    max-width: 600px;
+  }
+}
+
+/* SECTION - ÚLTIMA CHAMADA */
+
+.pkz .closing-cta {
+  position: relative;
+  overflow: hidden;
+  padding: 72px 0;
+  background-color: #F1F000;
+  color: #141414;
+  text-align: center;
+  isolation: isolate;
+}
+
+/* PATTERN EXCLUSIVO DA ÚLTIMA CHAMADA */
+.pkz .closing-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("/imagens/imagens-padronizacao/assets/pkz/pattern_foguete_escuro.png");
+  background-position: center top;
+  background-size: 1900px auto;
+  background-repeat: repeat;
+  filter: brightness(0);
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* Conteúdo acima do pattern */
+.pkz .closing-cta>.content-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.pkz .closing-cta h2 {
+  color: #141414;
+  font-size: 7.6vw;
+  line-height: 1.13;
+}
+
+.pkz .closing-cta p {
+  margin: 40px 0 55px;
+  color: inherit;
+  font-size: 1.25rem;
+}
+
+/* Botões empilhados no celular */
+.pkz .closing-cta .hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 420px;
+  margin-inline: auto;
+}
+
+/* Botão da Última Chamada */
+.pkz .closing-cta .plans-bottom-cta {
+  margin-top: 0;
+  padding: 22px 32px;
+  border-radius: 20px;
+  background: #000080;
+  color: #ffff;
+  font-size: 1.5rem;
+}
+
+/* RESPONSIVIDADE - ÚLTIMA CHAMADA */
+
+@media (min-width: 768px) {
+  .pkz .closing-cta {
+    padding: 120px 0;
+  }
+
+  .pkz .closing-cta h2 {
+    font-size: 3.8rem;
+  }
+
+  .pkz .closing-cta p {
+    font-size: 1.25rem;
+  }
+
+  .pkz .closing-cta .hero-actions {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: none;
+  }
+}
+
+@media (min-width: 1201px) {
+  .pkz .closing-cta {
+    width: 100%;
+    margin-inline: auto;
+    padding: 100px 0;
+  }
+}
+
+/* FOOTER */
+
+.pkz .landing-footer {
+  padding: 56px 0 40px;
+  background: #141414;
+  color: #ffff;
+}
+
+/* Grade do rodapé */
+.pkz .footer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px 16px;
+}
+
+/* Identidade */
+.pkz .footer-brand-block {
+  display: flex;
+  grid-column: 1 / -1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.pkz .footer-logo {
+  display: block;
+  width: 190px;
+  height: 60px;
+}
+
+.pkz .footer-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.pkz .footer-brand-block p {
+  color: #8E8E8E;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.pkz .footer-brand-block small {
+  margin-top: 6px;
+  color: #8E8E8E;
+  font-size: 0.78rem;
+}
+
+/* Grupos de links */
+.pkz .footer-grid nav {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 14px;
+  border-left: 1px solid #cbd6da;
+}
+
+.pkz .footer-grid nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  list-style: none;
+}
+
+.pkz .footer-grid nav strong {
+  margin-bottom: 4px;
+  font-size: 1.02rem;
+}
+
+.pkz .footer-grid nav a {
+  display: block;
+  padding-block: 5px;
+  color: #8E8E8E;
+  font-size: 0.95rem;
+}
+
+/* RESPONSIVIDADE - FOOTER */
+
+@media (min-width: 601px) {
+  .pkz .footer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .pkz .landing-footer {
+    padding: 88px 0 80px;
+  }
+
+  .pkz .footer-grid {
+    gap: 36px 28px;
+  }
+
+  .pkz .footer-logo {
+    width: 210px;
+    height: 64px;
+  }
+
+  .pkz .footer-grid nav {
+    padding-left: 22px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .pkz .landing-footer {
+    padding: 60px 0 104px;
+  }
+
+  .pkz .footer-grid {
+    grid-template-columns: 1.7fr 1fr 1fr 1fr;
+    gap: 42px;
+  }
+
+  .pkz .footer-brand-block {
+    grid-column: auto;
+    gap: 13px;
+  }
+
+  .pkz .footer-logo {
+    width: 215px;
+    height: 70px;
+    margin-bottom: 5px;
+  }
+
+  .pkz .footer-grid nav {
+    gap: 6px;
+    padding-left: 24px;
+  }
+
+  .pkz .footer-grid nav ul {
+    gap: 6px;
+  }
+
+  .pkz .footer-grid nav a {
+    padding-block: 3px;
+  }
+}

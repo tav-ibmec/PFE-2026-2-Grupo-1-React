@@ -29,7 +29,7 @@ function AreaDecorada({ decoracao, classe, classeImagem, children }) {
   );
 }
 
-// Estrutura compartilhada por as páginas; identidade e dados ficam nas páginas.
+// Estrutura compartilhada por One to One e PKZ; identidade e dados ficam nas páginas.
 function LandingPage({ dados }) {
   return (
     <div className={dados.classe}>
@@ -46,18 +46,18 @@ function LandingPage({ dados }) {
           <Diferencial {...dados.diferenciais} />
         </AreaDecorada>
         <Planos {...dados.planos} />
-        {dados.avaliacoes && <AreaDecorada
+        <AreaDecorada
           decoracao={dados.decoracaoAvaliacoes}
           classe="landing-reviews-decorated"
           classeImagem="reviews-bg-arrow"
         >
           <Review {...dados.avaliacoes} />
           <Contato {...dados.contato} />
-        </AreaDecorada>}
-        {dados.faq && <FAQ {...dados.faq} />}
-        {dados.chamadaFinal && <CTAFinal {...dados.chamadaFinal} />}
+        </AreaDecorada>
+        <FAQ {...dados.faq} />
+        <CTAFinal {...dados.chamadaFinal} />
       </main>
-      {dados.footer && <Footer {...dados.footer} />}
+      <Footer {...dados.footer} />
     </div>
   );
 }

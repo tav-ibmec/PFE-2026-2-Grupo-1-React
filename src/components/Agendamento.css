@@ -2,7 +2,7 @@
 
 .agendamento,
 .agenda-modal {
-  --agenda-livre: var(--cor-azul-oto, #0898dd);
+  --agenda-livre: var(--cor-amarelo-pkz, #f1f000);
   --agenda-livre-fg: #141414;
   --agenda-ocupado: #e3e3e3;
   --agenda-ocupado-fg: #595959;
