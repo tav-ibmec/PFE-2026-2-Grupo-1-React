@@ -53,7 +53,7 @@
 }
 
 .pkz .landing-nav {
-  background: #fff;
+  background: var(--cor-azul-pkz);
 }
 
 @media (min-width: 1025px) {
@@ -82,8 +82,8 @@
 /* Segunda linha do título */
 .pkz .landing-hero.oto-hero h1 span {
   color: #f1f000;
-  font-size: clamp(1.9rem, 10vw, 7.7rem);
-  white-space: nowrap;
+  font-size: min(1.32em, 7.7rem);
+  white-space: normal;
 }
 
 /* Descrição */
@@ -1001,7 +1001,7 @@
 
 .pkz .contact-copy h2 .nowrap {
   color: inherit;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .pkz .contact-copy h2~p {
@@ -1468,5 +1468,18 @@
 
   .pkz .footer-grid nav a {
     padding-block: 3px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pkz .landing-footer nav a {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Em telas muito largas e baixas, cobre toda a Hero sem distorcer a foto. */
+@media (min-aspect-ratio: 2/1) {
+  .pkz .landing-hero.oto-hero {
+    background-size: cover;
   }
 }

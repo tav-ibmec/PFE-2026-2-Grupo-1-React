@@ -1,13 +1,14 @@
-/* HERO - estrutura compartilhada entre One to One e PKZ Lab */
+/* HERO - estrutura compartilhada entre One to One, PKZ Lab e HUB */
 
-:is(.oto, .pkz) .landing-hero {
+:is(.oto, .pkz, .hub) .landing-hero {
   position: relative;
   display: flex;
-  height: 100svh;
+  min-height: 100svh;
+  height: auto;
   box-sizing: border-box;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 120px 6% 64px;
   overflow: hidden;
   border-radius: 0;
@@ -17,30 +18,33 @@
   text-align: center;
 }
 
-:is(.oto, .pkz) .landing-hero .hero-inner {
+:is(.oto, .pkz, .hub) .landing-hero .hero-inner {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
   margin-inline: auto;
 }
 
 /* Título principal e linha destacada */
-:is(.oto, .pkz) .landing-hero h1 {
+:is(.oto, .pkz, .hub) .landing-hero h1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
   margin: 0;
   font-family: CocogooseProTrial, "Outfit", Arial, sans-serif;
-  font-size: clamp(2.5rem, 5vw, 6rem);
+  font-size: clamp(1rem, 5vw, 6rem);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
-:is(.oto, .pkz) .landing-hero h1 span {
+:is(.oto, .pkz, .hub) .landing-hero h1 span {
   display: inline-block;
   line-height: 1;
 }
 
 /* Descrição abaixo do título */
-:is(.oto, .pkz) .landing-hero .hero-inner > p {
+:is(.oto, .pkz, .hub) .landing-hero .hero-inner > p {
   max-width: 800px;
   margin: 30px auto 0;
   font-size: clamp(1rem, 1.7vw, 1.5rem);
@@ -49,7 +53,7 @@
 }
 
 /* Seta inferior compartilhada */
-:is(.oto, .pkz) .landing-hero .scroll-cue {
+:is(.oto, .pkz, .hub) .landing-hero .scroll-cue {
   position: absolute;
   z-index: 2;
   right: 50%;
@@ -63,7 +67,7 @@
   clip-path: path("M 0 44 H 13 C 51 44 50 0 92 0 C 134 0 133 44 171 44 H 184 Z");
 }
 
-:is(.oto, .pkz) .landing-hero .scroll-cue span {
+:is(.oto, .pkz, .hub) .landing-hero .scroll-cue span {
   display: block;
   width: 12px;
   height: 12px;
@@ -72,51 +76,40 @@
   border-bottom: 2px solid currentColor;
 }
 
-/* Medidas do título e da descrição. */
-:is(.oto, .pkz) .oto-hero h1 {
-  line-height: 3;
+/* Linhas no fluxo normal: a distância acompanha a fonte, sem sobreposição. */
+:is(.oto, .pkz, .hub) .landing-hero h1 > br {
+  display: none;
 }
 
-:is(.oto, .pkz) .oto-hero h1 span {
-  font-size: 1.5em;
-  transform: translateY(-140px);
+:is(.oto, .pkz, .hub) .oto-hero h1 span {
+  font-size: 1.32em;
+  line-height: 1.15;
 }
 
-:is(.oto, .pkz) .oto-hero .hero-inner > p {
+:is(.oto, .pkz, .hub) .oto-hero .hero-inner > p {
   font-size: 1.5rem;
-  transform: translateY(-230px);
 }
 
 /* Celular: evita que os deslocamentos grandes cortem o conteudo. */
 @media (max-width: 767px) {
-  :is(.oto, .pkz) .landing-hero {
+  :is(.oto, .pkz, .hub) .landing-hero {
     height: auto;
     min-height: 100svh;
     padding: 120px 6% 72px;
     justify-content: center;
   }
 
-  :is(.oto, .pkz) .landing-hero h1 {
-    font-size: clamp(1.9rem, 7vw, 2.8rem);
+  :is(.oto, .pkz, .hub) .landing-hero h1 {
+    font-size: clamp(1rem, 7vw, 2.8rem);
     line-height: 1.15;
   }
 
-  :is(.oto, .pkz) .landing-hero .hero-inner > p {
+  :is(.oto, .pkz, .hub) .landing-hero .hero-inner > p {
     font-size: clamp(0.95rem, 3.7vw, 1.15rem);
   }
 
-  :is(.oto, .pkz) .oto-hero h1 {
-    line-height: 1.15;
-  }
-
-  :is(.oto, .pkz) .oto-hero h1 span {
-    font-size: 1.25em;
-    transform: none;
-  }
-
-  :is(.oto, .pkz) .oto-hero .hero-inner > p {
+  :is(.oto, .pkz, .hub) .oto-hero .hero-inner > p {
     font-size: clamp(0.95rem, 3.7vw, 1.15rem);
-    transform: none;
   }
 }
 

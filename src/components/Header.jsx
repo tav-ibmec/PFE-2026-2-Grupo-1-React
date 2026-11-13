@@ -8,11 +8,12 @@ function Header({
   linkMatricula,
   classeBotao = 'button-blue',
   onContato,
+  contatoDestacado = false,
+  textoContato = 'Contato',
   linkAgendamento,
 }) {
   const [menuAberto, setMenuAberto] = useState(false);
   const idNavegacao = useId();
-  console.log('Contato recebido:', typeof onContato);
 
   return (
     <header className="landing-header">
@@ -43,19 +44,23 @@ function Header({
         <ul>
           {links.map((link) => (
             <li key={`${link.href}-${link.texto}`}>
-              <a
-                href={link.href}
-                className={link.classe || undefined}
-                onClick={() => setMenuAberto(false)}
-              >
-                {link.texto}
-              </a>
+              {link.href ? (
+                <a
+                  href={link.href}
+                  className={link.classe || undefined}
+                  onClick={() => setMenuAberto(false)}
+                >
+                  {link.texto}
+                </a>
+              ) : (
+                <span className="nav-inactive" aria-disabled={link.atual ? undefined : true} aria-current={link.atual ? "page" : undefined}>{link.texto}</span>
+              )}
             </li>
           ))}
-          
+
           {/* Botão de contato opcional */}
           {onContato && (
-            <li>
+            <li className={contatoDestacado ? 'contato-mobile' : undefined}>
               <button
                 className="hub-contact-trigger"
                 type="button"
@@ -66,7 +71,7 @@ function Header({
                   onContato();
                 }}
               >
-                Contato
+                {textoContato}
               </button>
             </li>
           )}
@@ -85,6 +90,21 @@ function Header({
 
         </ul>
       </nav>
+
+      {onContato && contatoDestacado && (
+        <button
+          className="header-contato"
+          type="button"
+          aria-haspopup="dialog"
+          aria-controls="hub-contact-dialog"
+          onClick={() => {
+            setMenuAberto(false);
+            onContato();
+          }}
+        >
+          {textoContato}
+        </button>
+      )}
 
       {/* Botão de agendamento */}
       {linkAgendamento && (

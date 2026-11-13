@@ -34,7 +34,7 @@ function Contato({
           <h2
             id={tituloId}
             style={{
-              fontSize: '2.6rem'
+              fontSize: 'clamp(1.5rem, 8.2cqi, 2.6rem)'
             }}
           >
             {titulo}

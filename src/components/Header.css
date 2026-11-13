@@ -24,14 +24,18 @@
 
 /* Cores específicas das páginas */
 .hub .landing-header {
-  --header-bg: rgba(16, 24, 32, 0.94);
+  --header-bg: #141414;
+  font-family: "Outfit", Arial, sans-serif;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.22);
 }
 
 .oto .landing-header {
   --header-bg: #fff;
-
   color: var(--cor-azul-escuro-oto);
   box-shadow: 0 4px 22px rgba(0, 0, 0, 0.09);
+}
+.pkz .landing-header {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Logos do HUB */
@@ -43,13 +47,13 @@
 
 .hub-header-brands .hub-brand {
   display: flex;
-  width: 72px;
-  height: 48px;
+  width: 118px;
+  height: 44px;
   align-items: center;
 }
 
 .hub-header-brands .oto-brand {
-  width: 100px;
+  width: 82px;
 }
 
 .hub-header-brands img {
@@ -67,6 +71,7 @@
 /* Botão do menu mobile */
 .menu-toggle {
   display: grid;
+  flex: none;
   width: 46px;
   height: 46px;
   margin-left: auto;
@@ -87,6 +92,8 @@
   left: 0;
   display: none;
   padding: 8px 18px;
+  max-height: calc(100dvh - 120px);
+  overflow-y: auto;
   border-radius: 18px;
   background: var(--header-bg);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
@@ -104,6 +111,7 @@
 .landing-nav a {
   display: block;
   padding: 13px 4px;
+  font-size: 1rem;
 }
 
 /* Ações visíveis apenas no desktop */
@@ -120,7 +128,7 @@
     width: 92%;
     min-height: 82px;
     gap: 1.8vw;
-    padding: 10px 25px;
+    padding: 10px 30px;
   }
 
   .menu-toggle {
@@ -130,6 +138,10 @@
   .landing-nav {
     position: static;
     display: block;
+    max-height: none;
+    overflow: visible;
+    max-height: none;
+    overflow: visible;
     margin-left: auto;
     padding: 0;
     background: transparent;
@@ -170,137 +182,10 @@
   }
 }
 
-/* Ajustes das páginas implementadas; HUB V1 preservado. */
-/* HEADER - ESTRUTURA COMPARTILHADA */
-
-:is(.oto, .pkz) .landing-header {
-  --header-bg: var(--cor-azul-pkz);
-
-  position: absolute;
-  z-index: 20;
-  top: 14px;
-  left: 50%;
-  display: flex;
-  width: calc(100% - 24px);
-  max-width: var(--wrap-max);
-  min-height: 64px;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 18px;
-  transform: translateX(-50%);
-  border-radius: 999px;
-  background: var(--header-bg);
-  color: #fff;
-  font-size: 0.92rem;
-  font-weight: 600;
-}
-
-/* Cores específicas das páginas */
-
-.oto .landing-header {
-  --header-bg: #fff;
-  color: var(--cor-azul-escuro-oto);
-  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.09);
-}
-.pkz .landing-header {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Logos do HUB */
-
-:is(.oto, .pkz) .brand-divider {
-  width: 1px;
-  height: 42px;
-  background: rgba(255, 255, 255, 0.58);
-}
-:is(.oto, .pkz) .menu-toggle {
-  display: grid;
-  width: 46px;
-  height: 46px;
-  margin-left: auto;
-  place-items: center;
-  border: 0;
-  border-radius: 50%;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-  font-size: 1.7rem;
-}
-:is(.oto, .pkz) .landing-nav {
-  position: absolute;
-  top: calc(100% + 10px);
-  right: 0;
-  left: 0;
-  display: none;
-  padding: 8px 18px;
-  border-radius: 18px;
-  background: var(--header-bg);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
-}
-
-:is(.oto, .pkz) .landing-nav.is-open {
-  display: block;
-}
-
-:is(.oto, .pkz) .landing-nav ul {
-  display: flex;
-  flex-direction: column;
-}
-
-:is(.oto, .pkz) .landing-nav a {
-  display: block;
-  padding: 13px 4px;
-  font-size: 1rem;
-}
-
-/* Ações visíveis apenas no desktop */
-:is(.oto, .pkz) .student-link,
-:is(.oto, .pkz) .landing-header .header-cta {
-  display: none;
-}
-
-/* HEADER - DESKTOP */
-
-@media (min-width: 1025px) {
-  :is(.oto, .pkz) .landing-header {
-    top: 30px;
-    width: 92%;
-    min-height: 82px;
-    gap: 1.8vw;
-    padding: 10px 30px;
-  }
-
-  :is(.oto, .pkz) .menu-toggle {
-    display: none;
-  }
-
-  :is(.oto, .pkz) .landing-nav {
-    position: static;
-    display: block;
-    margin-left: auto;
-    padding: 0;
-    background: transparent;
-    box-shadow: none;
-  }
-
-  :is(.oto, .pkz) .landing-nav ul {
-    flex-direction: row;
-    align-items: center;
-    gap: 1.8vw;
-  }
-
-  :is(.oto, .pkz) .student-link {
-    display: inline;
-    margin-left: auto;
-    white-space: nowrap;
-  }
-
-  :is(.oto, .pkz) .landing-header .header-cta {
-    display: inline-flex;
-  }
-}
+/* AGENDAMENTO E POSICIONAMENTO */
 
 /* Mantém o Header visível durante a rolagem */
+.hub .landing-header,
 .oto .landing-header,
 .pkz .landing-header {
   position: fixed;
@@ -310,7 +195,9 @@
   right: auto;
   transform: translateX(-50%);
 }
-:is(.oto, .pkz) .landing-header .header-agendamento {
+
+/* Botão de Agendamento no desktop */
+.landing-header .header-agendamento {
   display: none;
   align-items: center;
   justify-content: center;
@@ -323,19 +210,25 @@
   white-space: nowrap;
   transition: filter 0.2s ease;
 }
+
+/* Agendamento - One to One */
 .oto .header-agendamento {
   background: var(--cor-azul-oto, #009fe3);
   color: #fff;
 }
+
+/* Agendamento - PKZ */
 .pkz .header-agendamento {
   background: var(--cor-amarelo-pkz, #f1f000);
   color: var(--cor-preto-pkz, #141414);
 }
 
-:is(.oto, .pkz) .landing-header .header-agendamento:hover {
+.landing-header .header-agendamento:hover {
   filter: brightness(0.92);
 }
-:is(.oto, .pkz) .landing-nav .agendamento-mobile a {
+
+/* Botão dentro do menu mobile */
+.landing-nav .agendamento-mobile a {
   display: block;
   margin-top: 8px;
   padding: 12px 18px;
@@ -355,6 +248,7 @@
 }
 
 /* Evita que o Header cubra as seções ao navegar */
+.hub section[id],
 .oto section[id],
 .pkz section[id],
 .oto #agendar,
@@ -365,8 +259,12 @@
 /* RESPONSIVIDADE */
 
 @media (min-width: 1025px) {
+
+  /* Logo à esquerda, navegação no centro,
+     botão à direita */
+  .hub .landing-header,
   .oto .landing-header,
-.pkz .landing-header {
+  .pkz .landing-header {
     display: grid;
     grid-template-columns:
       minmax(0, 1fr)
@@ -377,17 +275,22 @@
   }
 
   /* Centraliza os links */
+  .hub .landing-nav,
   .oto .landing-nav,
-.pkz .landing-nav {
+  .pkz .landing-nav {
     margin-left: 0;
     justify-self: center;
   }
+
+  /* Alinha o botão à direita */
   .oto .landing-header .header-agendamento,
-.pkz .landing-header .header-agendamento {
+  .pkz .landing-header .header-agendamento {
     display: inline-flex;
     justify-self: end;
   }
-  :is(.oto, .pkz) .landing-nav .agendamento-mobile {
+
+  /* Esconde a versão mobile */
+  .landing-nav .agendamento-mobile {
     display: none;
   }
 }
@@ -395,7 +298,8 @@
 /* EFEITOS DE HOVER */
 
 /* Transição dos links */
-:is(.oto, .pkz) .landing-header .landing-nav a {
+.landing-header .landing-nav a,
+.landing-header .landing-nav .nav-inactive {
   display: inline-block;
   transition:
     transform 0.25s ease,
@@ -404,14 +308,22 @@
 
 /* Efeito de hover */
 @media (hover: hover) {
-  :is(.oto, .pkz) .landing-header .landing-nav a:hover {
+  .landing-header .landing-nav a:hover,
+  .landing-header .landing-nav .nav-inactive:hover {
     transform: translateY(-3px);
+  }
+
+  .hub .landing-nav a:hover,
+  .hub .landing-nav .nav-inactive:hover {
+    color: #0F57C0;
   }
 
   /* One to One */
   .oto .landing-nav a:hover {
     color: var(--cor-azul-oto, #009fe3);
   }
+
+  /* PKZ Lab */
   .pkz .landing-nav a:hover {
     color: var(--cor-amarelo-pkz, #f1f000);
   }
@@ -419,11 +331,70 @@
 
 /* Acessibilidade: reduz movimento quando solicitado */
 @media (prefers-reduced-motion: reduce) {
-  :is(.oto, .pkz) .landing-header .landing-nav a {
+  .landing-header .landing-nav a,
+.landing-header .landing-nav .nav-inactive {
     transition: none;
   }
 
-  :is(.oto, .pkz) .landing-header .landing-nav a:hover {
+  .landing-header .landing-nav a:hover,
+  .landing-header .landing-nav .nav-inactive:hover {
     transform: none;
+  }
+}
+/* Contato destacado e item sem destino: variantes opcionais do Header. */
+.landing-nav .nav-inactive {
+  display: inline-block;
+  padding: 13px 4px;
+  font-size: 1rem;
+  cursor: default;
+}
+
+.landing-header .header-contato {
+  display: none;
+}
+
+.hub .header-contato,
+.hub .contato-mobile .hub-contact-trigger {
+  border: 0;
+  border-radius: 999px;
+  background: #0F57C0;
+  color: #fff;
+  font: 700 1rem "Outfit", Arial, sans-serif;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hub .contato-mobile .hub-contact-trigger {
+  margin-block: 8px;
+  padding: 12px 18px;
+}
+
+@media (min-width: 1025px) {
+  .hub .landing-header .header-contato {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: end;
+    min-width: 144px;
+    min-height: 42px;
+    padding: 10px 24px;
+  }
+
+  .landing-nav .contato-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .hub-header-brands {
+    gap: 8px;
+  }
+
+  .hub-header-brands .hub-brand {
+    width: 98px;
+  }
+
+  .hub-header-brands .oto-brand {
+    width: 70px;
   }
 }

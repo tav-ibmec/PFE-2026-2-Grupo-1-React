@@ -1,5 +1,0 @@
-Conclusão da página da PKZ Lab.
-
-- Adiciona Avaliações, Contato, FAQ, CTA e Footer.
-- Reutiliza o agendamento com armazenamento separado para a PKZ.
-- Inclui dados, ícones, decorações e estilos das novas seções.

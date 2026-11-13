@@ -33,7 +33,6 @@ function AreaDecorada({ decoracao, classe, classeImagem, children }) {
 function LandingPage({ dados }) {
   return (
     <div className={dados.classe}>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" />
       <Header {...dados.header} />
       <main id="main-content">
         <Hero {...dados.hero} />

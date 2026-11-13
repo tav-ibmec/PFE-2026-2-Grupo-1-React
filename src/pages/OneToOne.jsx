@@ -1,7 +1,7 @@
 import './one-to-one.css';
 import LandingPage from '../components/LandingPage.jsx';
 
-// Dados e identidade visual da One to One.
+// A One to One usa a mesma estrutura de componentes da PKZ.
 
 const imagem = '/imagens/imagens-padronizacao/assets/one-to-one/';
 const iconeContato = '/imagens/icones/contact-icons/';

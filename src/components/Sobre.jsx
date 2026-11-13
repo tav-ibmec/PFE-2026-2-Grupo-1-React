@@ -1,10 +1,11 @@
-function Sobre({ titulo, tituloId, subtitulo, foto, altFoto, paragrafos = [], fechamento, estatisticas = [], decoracaoTitulo, decoracaoLateral, fechamentoEmParagrafo = false }) {
+function Sobre({ titulo, tituloId, subtitulo, foto, altFoto, paragrafos = [], fechamento, estatisticas = [], decoracaoTitulo, decoracaoLateral, fechamentoEmParagrafo = false, id = "sobre", classe = "", imagemAposConteudo = false, mostrarEstatisticas = true, acao }) {
+  const imagem = <figure className="about-photo oto-about-photo">
+    <img src={foto} alt={altFoto} loading="lazy" />
+  </figure>;
   return (
-    <section className="about-section" id="sobre" aria-labelledby={tituloId}>
+    <section className={classe ? `about-section ${classe}` : "about-section"} id={id} aria-labelledby={tituloId}>
       <div className="content-wrap about-grid">
-        <figure className="about-photo oto-about-photo">
-          <img src={foto} alt={altFoto} loading="lazy" />
-        </figure>
+        {!imagemAposConteudo && imagem}
 
         <div className="about-content">
           <header className="section-head has-deco">
@@ -23,15 +24,17 @@ function Sobre({ titulo, tituloId, subtitulo, foto, altFoto, paragrafos = [], fe
             <h3 className="closing-line">{fechamento}</h3>
           ))}
 
-          <ul className="stats" aria-label="Números da empresa">
+          {mostrarEstatisticas && <ul className="stats" aria-label="Números da empresa">
             {estatisticas.map((estatistica) => (
               <li key={estatistica.numero}>
                 <strong>{estatistica.numero}</strong>
                 <span>{estatistica.rotulo}</span>
               </li>
             ))}
-          </ul>
+          </ul>}
+          {acao}
         </div>
+        {imagemAposConteudo && imagem}
       </div>
 
       {decoracaoLateral && (

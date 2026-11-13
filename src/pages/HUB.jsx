@@ -1,16 +1,79 @@
-import './hub.css';
+import { useEffect, useRef } from 'react';
 import Header from '../components/Header.jsx';
-import { useRef } from 'react';
+import Hero from '../components/Hero.jsx';
+import Sobre from '../components/Sobre.jsx';
+import './fisioterapia.css';
+import './hub.css';
+
+const assets = '/imagens/imagens-padronizacao/assets/';
 
 const linksHub = [
-  { texto: 'Quem somos', href: '#quem-somos' },
-  { texto: 'Nossas empresas', href: '#empresas' },
+  { texto: 'Início', href: '#home' },
+  { texto: 'Nossas Empresas', href: '#empresas' },
+  { texto: 'Fisioterapia', href: '/fisioterapia' },
 ];
 
-function HUB() {
-  const contatoRef = useRef(null);
+const empresas = [
+  {
+    id: 'pkz',
+    nome: 'Playmakerz',
+    imagem: assets + 'hub/FUNDO_PKZ_HUB.png',
+    altImagem: 'Jovem atleta com uma bola de futebol',
+    logo: assets + 'hub/PKZ_Horizontal_Branco.svg',
+    paragrafos: [
+      'A Playmakerz é um centro de desenvolvimento e performance que combina ciência, treinamento e acompanhamento individualizado para potencializar cada etapa da jornada esportiva.',
+      'Um ambiente pensado para desenvolver capacidades, aprimorar o desempenho e construir bases sólidas para a evolução de jovens atletas.',
+    ],
+    botao: 'Conheça a PKZ',
+    href: '/pkz-lab',
+  },
+  {
+    id: 'oto',
+    nome: 'One to One Studio',
+    imagem: assets + 'hub/FUNDO_OTO_HUB.png',
+    altImagem: 'Halteres sobre o fundo azul da One to One',
+    logo: assets + 'hub/OneToOne_Branco.svg',
+    paragrafos: [
+      'One to One é uma experiência personalizada de saúde, treinamento e performance, criada para quem busca evoluir com acompanhamento próximo e estratégias pensadas para suas necessidades e objetivos.',
+      'Um cuidado individualizado que integra movimento, saúde e qualidade de vida em uma jornada contínua de evolução.',
+    ],
+    botao: 'Conheça a One to One',
+    href: '/one-to-one',
+  },
+];
+
+// Os cartões institucionais têm estrutura distinta dos cartões de planos.
+function EmpresaCard({ empresa }) {
   return (
-    <div className="hub">
+    <article className="company-card" aria-labelledby={empresa.id + '-card-title'}>
+      <div className={'company-image ' + empresa.id + '-card-image'}>
+        <img className="company-photo" src={empresa.imagem} alt={empresa.altImagem} loading="lazy" />
+        <h3 id={empresa.id + '-card-title'}>
+          <img className="company-logo" src={empresa.logo} alt={empresa.nome} loading="lazy" />
+        </h3>
+      </div>
+      <div className="company-copy">
+        {empresa.paragrafos.map((texto) => <p key={texto}>{texto}</p>)}
+      </div>
+      <a className={'hub-button ' + empresa.id + '-button'} href={empresa.href}>
+        {empresa.botao}
+      </a>
+    </article>
+  );
+}
+
+export function HubLayout({ children, fisioterapia = false }) {
+  const contatoRef = useRef(null);
+  useEffect(() => {
+    const destino = window.location.hash.slice(1);
+    if (!destino) return;
+    const quadro = requestAnimationFrame(() => {
+      document.getElementById(destino)?.scrollIntoView();
+    });
+    return () => cancelAnimationFrame(quadro);
+  }, []);
+  return (
+    <div className={fisioterapia ? "hub fisioterapia-page" : "hub"}>
       <Header
         identidade={
           <div className="hub-header-brands">
@@ -21,7 +84,7 @@ function HUB() {
               aria-label="Conheça a PKZ Lab"
             >
               <img
-                src="/imagens/imagens-padronizacao/assets/hub/PKZ_Vertical_Branco.svg"
+                src="/imagens/imagens-padronizacao/assets/hub/PKZ_Horizontal_Branco.svg"
                 alt="Playmakerz"
               />
             </a>
@@ -42,183 +105,16 @@ function HUB() {
             </a>
           </div>
         }
-        links={linksHub}
+        links={fisioterapia ? [
+          { texto: 'Início', href: '/' },
+          { texto: 'Nossas Empresas', href: '/#empresas' },
+          { texto: 'Fisioterapia', atual: true },
+        ] : linksHub}
         onContato={() => contatoRef.current?.showModal()}
+        contatoDestacado
+        textoContato="Contatos"
       />
-      <main id="main-content">
-
-        {/* Seção principal do HUB */}
-        <section
-          className="hub-hero"
-          id="quem-somos"
-          aria-labelledby="hub-title"
-        >
-          <div className="hub-wrap hub-hero-content">
-
-            <h1 id="hub-title">
-              DIFERENTES FASES.<br />
-              UM SÓ <span>PROPÓSITO.</span>
-            </h1>
-
-            <p>
-              Da formação esportiva de jovens atletas ao cuidado
-              integral e à performance de adultos, unimos ciência,
-              treinamento e saúde para desenvolver o potencial
-              de cada aluno.
-            </p>
-
-            {/* Diferenciais */}
-            <ul
-              className="hub-features"
-              aria-label="Nossos diferenciais"
-            >
-              <li>
-                <img
-                  src="/imagens/imagens-padronizacao/assets/hub/HUB_ICON_1.png"
-                  alt=""
-                />
-                <span>Profissionais especializados</span>
-              </li>
-
-              <li>
-                <img
-                  src="/imagens/imagens-padronizacao/assets/hub/HUB_ICON_2.png"
-                  alt=""
-                />
-                <span>Treinamento individualizado</span>
-              </li>
-
-              <li>
-                <img
-                  src="/imagens/imagens-padronizacao/assets/hub/HUB_ICON_3.png"
-                  alt=""
-                />
-                <span>Resultados de verdade</span>
-              </li>
-            </ul>
-          </div>
-          
-            {/* Seta para a próxima seção */}
-            <a
-              className="scroll-cue"
-              href="#empresas"
-              aria-label="Ir para Nossas empresas"
-            >
-              <span aria-hidden="true"></span>
-            </a>
-
-        </section>
-
-        {/* Seção Nossas Empresas */}
-        <section
-          className="hub-companies"
-          id="empresas"
-          aria-labelledby="companies-title"
-        >
-          <div className="hub-wrap">
-            <p className="hub-kicker">NOSSAS EMPRESAS</p>
-
-            <h2 id="companies-title">
-              DO DESENVOLVIMENTO INFANTIL À PERFORMANCE ADULTA.
-            </h2>
-
-            {/* Contêiner dos cartões das empresas */}
-            <div className="company-grid">
-
-              {/* Cartão da Playmakerz */}
-              <article
-                className="company-card"
-                aria-labelledby="pkz-card-title"
-              >
-                <div className="company-image pkz-card-image">
-                  <img
-                    src="/imagens/imagens-padronizacao/assets/pkz/Gemini_Generated_Image_lxjfrllxjfrllxjf.jpg"
-                    alt="Jovem atleta com uma bola de futebol"
-                    loading="lazy"
-                  />
-
-                  <h3 id="pkz-card-title">
-                    ANTES DO ATLETA<br />
-                    <strong>EXISTE A PESSOA</strong>
-                  </h3>
-                </div>
-
-                <img
-                  className="company-logo"
-                  src="/imagens/imagens-padronizacao/assets/hub/LOGO_PKZ_navy.png"
-                  alt="Playmakerz"
-                  loading="lazy"
-                />
-
-                <div className="company-copy">
-                  <p>
-                    A Playmakerz é um centro de desenvolvimento e
-                    performance que combina ciência, treinamento e
-                    acompanhamento individualizado para potencializar
-                    cada etapa da jornada esportiva.
-                  </p>
-
-                  <p>
-                    Um ambiente pensado para desenvolver capacidades,
-                    aprimorar o desempenho e construir bases sólidas
-                    para a evolução de jovens atletas.
-                  </p>
-                </div>
-
-                <a className="hub-button pkz-button" href="/pkz-lab">
-                  CONHEÇA A PKZ
-                </a>
-              </article>
-
-              {/* Cartão da One to One */}
-              <article
-                className="company-card"
-                aria-labelledby="oto-card-title"
-              >
-                <div className="company-image oto-card-image">
-                  <img
-                    src="/imagens/imagens-padronizacao/assets/one-to-one/Prancheta_4.jpg"
-                    alt="Arte One to One com halter e a frase Amplie seu potencial"
-                    loading="lazy"
-                  />
-
-                  <h3 className="visually-hidden" id="oto-card-title">
-                    AMPLIE SEU POTENCIAL
-                  </h3>
-                </div>
-
-                <img
-                  className="company-logo oto-card-logo"
-                  src="/imagens/imagens-padronizacao/assets/one-to-one/LOGO_OTO_1.png"
-                  alt="One to One Studio"
-                  loading="lazy"
-                />
-
-                <div className="company-copy">
-                  <p>
-                    One to One é uma experiência personalizada de saúde,
-                    treinamento e performance, criada para quem busca
-                    evoluir com acompanhamento próximo e estratégias
-                    pensadas para suas necessidades e objetivos.
-                  </p>
-
-                  <p>
-                    Um cuidado individualizado que integra movimento,
-                    saúde e qualidade de vida em uma jornada contínua
-                    de evolução.
-                  </p>
-                </div>
-
-                <a className="hub-button oto-button" href="/one-to-one">
-                  CONHEÇA A ONE TO ONE
-                </a>
-              </article>
-            </div>
-
-          </div>
-        </section>
-      </main>
-      
+      {children}
       {/* Footer do HUB */}
       <footer className="hub-footer">
         <div className="hub-wrap hub-footer-inner">
@@ -247,12 +143,17 @@ function HUB() {
           {/* Navegação do rodapé */}
           <nav className="footer-nav" aria-label="Navegação do rodapé">
             <ul>
+              <li><a href={fisioterapia ? "/" : "#home"}>Início</a></li>
               <li>
-                <a href="#quem-somos">Quem somos</a>
+                <a href={fisioterapia ? "/#quem-somos" : "#quem-somos"}>Quem somos</a>
               </li>
 
               <li>
-                <a href="#empresas">Nossas empresas</a>
+                <a href={fisioterapia ? "/#empresas" : "#empresas"}>Nossas empresas</a>
+              </li>
+
+              <li>
+                <a href="/fisioterapia">Fisioterapia</a>
               </li>
 
               <li>
@@ -274,7 +175,7 @@ function HUB() {
 
         </div>
       </footer>
-      
+
       {/* Janela de contato do HUB */}
       <dialog
         ref={contatoRef}
@@ -336,4 +237,67 @@ function HUB() {
   );
 }
 
+export function ApresentacaoFisioterapia({ centralizada = false }) {
+  return <Sobre
+    id="fisioterapia"
+    classe={centralizada ? 'fisio-about fisio-about-centered' : 'fisio-about'}
+    imagemAposConteudo={centralizada}
+    mostrarEstatisticas={false}
+    subtitulo="FISIOTERAPIA"
+    tituloId="fisio-about-title"
+    titulo={<>Treine com segurança<br /><span>EVOLUA SEM LESÕES</span></>}
+    foto={assets + 'hub/fisioterapia.png'}
+    altFoto="Fisioterapeuta auxiliando um paciente em um alongamento da perna"
+    paragrafos={[
+      'A fisioterapia desempenha um papel fundamental na promoção da saúde, prevenção de lesões e recuperação dos movimentos. Por meio de uma abordagem individualizada, buscamos proporcionar mais mobilidade, autonomia e bem-estar, respeitando as necessidades e os objetivos de cada pessoa.',
+      'Nosso compromisso é ajudar você a se movimentar melhor, superar limitações e conquistar mais qualidade de vida no dia a dia.',
+    ]}
+    acao={!centralizada && <a className="hub-button fisio-button" href="/fisioterapia">Saiba Mais</a>}
+  />;
+}
+
+function HUB() {
+  return <HubLayout>
+      <main id="main-content">
+        {/* Preserva a âncora antiga usada no rodapé e em links existentes. */}
+        <div id="quem-somos">
+          <Hero
+            classe="oto-hero hub-hero"
+            tituloId="hub-title"
+            titulo={<>DIFERENTES FASES<br /><span>UM SÓ PROPÓSITO</span></>}
+            descricao="Da formação esportiva de jovens atletas ao cuidado integral e à performance de adultos, unimos ciência, treinamento e saúde para desenvolver o potencial de cada aluno."
+            setaHref="#empresas"
+            setaLabel="Ir para Nossas empresas"
+          />
+        </div>
+        <section className="hub-companies" id="empresas" aria-labelledby="companies-title">
+          <div className="hub-company-decoration" aria-hidden="true">
+            <img className="hub-rocket" src={assets + 'pkz/foguete_amarelo.svg'} alt="" />
+            <img className="hub-arrows-outline" src={assets + 'one-to-one/SETAS_1.png'} alt="" />
+            <img className="hub-arrows-solid" src={assets + 'one-to-one/SETAS_2.png'} alt="" />
+          </div>
+          <div className="hub-wrap">
+            <header className="hub-companies-heading">
+              <p className="hub-kicker">NOSSAS EMPRESAS</p>
+              <h2 id="companies-title">
+                Do desenvolvimento infantil à <span>PERFORMANCE ADULTA.</span>
+              </h2>
+              <p className="hub-companies-intro">
+                Duas empresas, uma mesma proposta: integrar desenvolvimento, saúde e movimento.
+                Com treinamento e cuidado individualizado, acompanhamos cada fase da vida,
+                promovendo evolução e bem-estar.
+              </p>
+            </header>
+            <div className="company-grid">
+              {empresas.map((empresa) => <EmpresaCard key={empresa.id} empresa={empresa} />)}
+            </div>
+          </div>
+        </section>
+        <ApresentacaoFisioterapia />
+      </main>
+  </HubLayout>;
+}
+
 export default HUB;
+
+

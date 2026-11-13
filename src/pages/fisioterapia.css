@@ -1,0 +1,111 @@
+/* Extensão da identidade da HUB; Header, Hero e Footer mantêm seus estilos. */
+.hub .hub-hero.fisio-hero {
+  background-image:
+    linear-gradient(90deg, rgba(6, 10, 15, 0.42), rgba(6, 10, 15, 0.22)),
+    url('/imagens/imagens-padronizacao/assets/hub/fisioterapia.png');
+}
+
+.hub .fisio-about {
+  padding: 24px 0 96px;
+  background: #fff;
+  color: #53616a;
+}
+
+.hub .fisio-about .about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 44px;
+  width: calc(100% - 2 * var(--gutter));
+  max-width: 1120px;
+  margin-inline: auto;
+}
+
+.hub .fisio-about .about-photo {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.hub .fisio-about .about-photo img {
+  width: 100%;
+  height: auto;
+}
+
+.hub .fisio-about .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 22px;
+  color: #53616a;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.hub .fisio-about .eyebrow::before,
+.hub .fisio-about-centered .eyebrow::after {
+  content: '';
+  width: 48px;
+  height: 1px;
+  background: #969696;
+}
+
+.hub .fisio-about h2 {
+  color: var(--cor-azul-escuro-oto);
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  line-height: 1.25;
+  margin-bottom: 24px;
+}
+
+.hub .fisio-about h2 span {
+  color: var(--cor-hub-azul);
+}
+
+.hub .fisio-about .about-content > p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.hub .fisio-button {
+  margin-top: 16px;
+  min-width: 200px;
+  background: #0F57C0;
+}
+
+.hub .fisio-button:hover {
+  filter: brightness(0.92);
+}
+
+.hub .fisio-about-centered {
+  padding-top: clamp(72px, 7vw, 100px);
+}
+
+.hub .fisio-about-centered .about-grid {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 760px;
+  justify-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.hub .fisio-about-centered .eyebrow {
+  justify-content: center;
+  color: #53616a;
+}
+
+.hub .fisio-about-centered .about-photo {
+  width: min(100%, 520px);
+}
+
+@media (max-width: 767px) {
+  .hub .fisio-about {
+    padding-bottom: 64px;
+  }
+
+  .hub .fisio-about .about-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+}
+
