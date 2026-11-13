@@ -1,5 +1,5 @@
-# PFE-2026-2-Grupo-1-React
-Repositório referente ao projeto em React (Grupo 1)
+# AP2 React — PKZ Lab & Studio One to One
+
 Documentação e código da AP2 do Projeto Front-End do IBMEC, desenvolvidos pelo Grupo 1, turma de sexta-feira.
 
 O projeto consiste na reconstrução em React do hub institucional e das páginas das empresas PKZ Lab e Studio One to One, desenvolvidos na AC Vanilla, com a inclusão de uma nova página de Fisioterapia.
@@ -35,35 +35,35 @@ Nova página incluída na AP2 e acessível pelo Início. Segue as mesmas seçõe
 
 | Integrante | Papel e entregas na AP2 |
 |---|---|
-| Rebeca | HUB: página inicial, estilos e funcionalidades do Início (`HUB.jsx` e `hub.css`). |
-| Yasmin | Arquitetura e integração: estrutura compartilhada das landing pages, rotas e organização dos dados (`LandingPage.jsx`, `PKZLab.jsx`, `OneToOne.jsx`, `App.jsx` e `src/data/`). |
-| João | Estrutura visual: cabeçalho fixo, Hero, Sobre Nós e Diferenciais (`Header.jsx`, `Hero.jsx`, `AboutSection.jsx` e `DifferenceSection.jsx`). |
-| Manuela | Planos e Avaliações: componentes dos pacotes, planos e depoimentos (`PlanCard.jsx`, `PlansSection.jsx`, `ReviewCard.jsx` e `ReviewsSection.jsx`). |
-| Pedro | FAQ, Chamada Final e Footer: perguntas frequentes, CTAs finais e rodapés das empresas (`FAQ.jsx`, `ClosingCTA.jsx` e `Footer.jsx`). |
-| Lucas | Contato e Agendamento: painel de contato, agenda, reservas e modal de confirmação (`ContactSection.jsx`, `Agendamento.jsx` e `Agendamento.css`), página de Fisioterapia e atualização do Início. |
+| Rebeca | Etapa 01 — HUB V1: implementação inicial do portal, com apresentação das empresas, navegação, contato e rodapé. |
+| Yasmin | Etapa 02 — One to One, Parte 1: inclusão da rota e das seções Hero, Sobre Nós, Diferenciais e Planos. |
+| João | Etapa 03 — One to One, Parte 2: conclusão da página com Avaliações, Contato, Agendamento, FAQ, CTA e Footer. |
+| Manuela | Etapa 04 — PKZ Lab, Parte 1: inclusão da rota e das seções Hero, Sobre Nós, Diferenciais e Pacotes, reutilizando os componentes compartilhados. |
+| Pedro | Etapa 05 — PKZ Lab, Parte 2: conclusão da página com Avaliações, Contato, agendamento integrado, FAQ, CTA e Footer. |
+| Lucas | Etapa 06 — Versão completa: reformulação do HUB para a V2 e inclusão da página de Fisioterapia, mantendo as demais páginas completas. |
 
 ## Organização do trabalho (Scrum)
 
-A equipe organizou o desenvolvimento em quatro sprints, entre 06/11/2026 e 09/11/2026, com acompanhamento das atividades por meio de registros de Scrum e versionamento no GitHub. Cada integrante ficou responsável pelos arquivos da própria função, e a ordem dos envios foi organizada para que dois integrantes não alterassem o mesmo arquivo ao mesmo tempo.
+A equipe organizou o desenvolvimento em cinco sprints, entre 06/11/2026 e 12/11/2026, com acompanhamento das atividades por meio de registros de Scrum e versionamento no GitHub. Como a equipe teve dificuldade de sincronizar o desenvolvimento dividido por componentes, o projeto foi reorganizado em seis etapas progressivas, postadas na ordem 01 → 06, em que cada versão acumula o conteúdo das anteriores.
 
 - **Sprint 1:** início do projeto em React, divisão das atribuições e registro do prazo, da página de Fisioterapia e das alterações solicitadas.
 - **Sprint 2:** definição dos responsáveis por função, estrutura do projeto, rotas, padrão de componentes e componentes principais.
-- **Sprint 3:** seções das landing pages, alterações solicitadas, migração dos estilos para os componentes e início da página de Fisioterapia.
-- **Sprint 4:** integração das páginas, conclusão da página de Fisioterapia, testes, correções e publicação na Vercel.
+- **Sprint 3:** reorganização das responsabilidades em seis etapas progressivas, definição da ordem de postagem e publicação da etapa 01 — HUB V1.
+- **Sprint 4:** publicação das etapas 02 a 05, com as páginas da One to One e da PKZ Lab completas.
+- **Sprint 5:** publicação da etapa 06, com o HUB V2 e a página de Fisioterapia, testes da versão completa, correções e publicação na Vercel.
 
-Os registros e documentos de acompanhamento estão organizados na pasta `scrum 3/`.
+Os registros e documentos de acompanhamento estão organizados na pasta `scrum-3.2/`.
 
 ## Estrutura do repositório
 
 | Pasta ou arquivo | Descrição |
 |---|---|
-| `Documentos/` | Materiais de planejamento e documentação do projeto trazidos do repositório anterior, incluindo Documento de Visão, 5W2H, AHTs, protótipos e outros registros, conforme disponíveis no repositório. |
-| `codigo-react/` | Código-fonte do site em React. |
-| `codigo-react/src/App.jsx` | Configuração das rotas das páginas. |
-| `codigo-react/src/components/` | Componentes reutilizados entre as páginas, como cabeçalho, seções, planos, avaliações, FAQ, rodapé e contato. |
-| `codigo-react/src/data/` | Informações de cada página, separadas dos componentes. |
-| `codigo-react/src/assets/` | Recursos visuais utilizados no site. |
-| `scrum 3/scrum-3/` | Registros de acompanhamento, planejamento e documentação das sprints e dailies. |
+| `docs/` | Materiais de planejamento e documentação do projeto trazidos do repositório anterior, incluindo Documento de Visão, 5W2H, AHTs, protótipos e outros registros, conforme disponíveis no repositório. |
+| `src/` | Código-fonte do site em React, com as páginas, os componentes, os estilos e os recursos visuais. |
+| `src/App.jsx` | Configuração das rotas das páginas. |
+| `src/data/` | Informações de cada página, separadas dos componentes. |
+| `package.json` | Dependências e scripts do projeto, usados com `npm ci` e `npm run dev`. |
+| `scrum-3.2/` | Registros de acompanhamento, planejamento e documentação das sprints e dailies. |
 | `README.md` | Apresentação do projeto e orientação sobre a organização do repositório. |
 
 ## Versionamento e publicação
