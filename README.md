@@ -72,6 +72,8 @@ O projeto utiliza Git e GitHub para o controle de versão, colaboração entre o
 
 O site é publicado na Vercel, como parte da entrega da AP2. A disponibilidade do site publicado deve ser conferida no próprio repositório.
 
+[Link para o site na Vercel](https://pfe-2026-2-grupo-1-react-orpin.vercel.app/)
+
 ## Considerações finais
 
 A AP2 React reúne as páginas institucionais da PKZ Lab, do Studio One to One e da Fisioterapia em uma estrutura integrada e baseada em componentes. O trabalho contempla a conversão do código para React, a aproximação da interface ao protótipo, as funcionalidades implementadas e a documentação das atividades, buscando manter a consistência entre as páginas e facilitar a manutenção do projeto.
